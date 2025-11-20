@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESIRE TECHNOLOGIES - Master Robotics & Automation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+        }
+        /* Mobile menu animation */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .mobile-menu.open {
+            max-height: 300px;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-robot text-primary-600 text-2xl mr-2"></i>
+                        <span class="font-bold text-xl text-gray-900">DESIRE TECHNOLOGIES</span>
+                    </div>
+                    <div class="hidden md:ml-6 md:flex md:space-x-8">
+                        <a href="index.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Home</a>
+                        <a href="courses.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-primary-500 text-sm font-medium text-gray-900">Courses</a>
+                        <a href="#"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Simulations</a>
+                        <a href="#"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Resources</a>
+                    </div>
+                    
+                </div>
+                <div class="flex items-center">
+                    <div class="hidden md:flex flex-shrink-0">
+                        <button class="relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700">
+                            Sign In
+                        </button>
+                    </div>
+                    <!-- Mobile menu button -->
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500">
+                            <span class="sr-only">Open main menu</span>
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile menu, show/hide -->
+            <div id="mobile-menu" class="mobile-menu md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-50 border-t">
+                    <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 bg-primary-100">Home</a>
+                    <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Courses</a>
+                    <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Simulations</a>
+                    <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Resources</a>
+                    <div class="pt-4 pb-3 border-t border-gray-200">
+                        <button class="w-full flex justify-center items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700">
+                            Sign In
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+<!-- Learning Page Main Content -->
+<main class="min-h-screen bg-gray-50">
+    <!-- Course Header -->
+    <section class="bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                <div>
+                    <nav class="flex space-x-2 text-sm text-gray-500 mb-2">
+                        <a href="#" class="hover:text-primary-600">Courses</a>
+                        <span>></span>
+                        <a href="#" class="hover:text-primary-600">Robotics</a>
+                        <span>></span>
+                        <span class="text-gray-900">Intro to Robotics</span>
+                    </nav>
+                    <h1 class="text-2xl font-bold text-gray-900">Intro to Robotics</h1>
+                    <p class="text-gray-600 mt-1">Learn the fundamentals of robotics and automation</p>
+                </div>
+                <div class="mt-4 md:mt-0 flex items-center space-x-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-32 bg-gray-200 rounded-full h-2">
+                            <div class="bg-primary-600 h-2 rounded-full" style="width: 30%"></div>
+                        </div>
+                        <span class="text-sm text-gray-500 hidden sm:inline">30% Complete</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Mobile Sidebar Toggle Button -->
+            <div class="lg:hidden mb-4">
+                <button id="sidebar-toggle" class="w-full bg-primary-600 hover:bg-primary-700 text-white py-3 px-4 rounded-lg font-medium flex items-center justify-center">
+                    <i class="fas fa-bars mr-2"></i>
+                    Show Course Content
+                </button>
+            </div>
+
+            <!-- Sidebar - Course Navigation -->
+            <div id="sidebar" class="lg:w-1/4 hidden lg:block">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 lg:sticky lg:top-24">
+                    <div class="p-4 border-b border-gray-200 flex justify-between items-center">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Course Content</h3>
+                            <p class="text-sm text-gray-500 mt-1">8 lessons • 2 hours</p>
+                        </div>
+                        <button id="sidebar-close" class="lg:hidden text-gray-500 hover:text-gray-700">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="max-h-96 overflow-y-auto">
+                        <!-- Module 1 -->
+                        <div class="border-b border-gray-200">
+                            <div class="p-4 bg-primary-50">
+                                <h4 class="font-medium text-gray-900">Module 1: Basics</h4>
+                                <p class="text-sm text-gray-600">4 lessons • 45 min</p>
+                            </div>
+                            <div class="space-y-1 p-2">
+                                <a href="#" class="flex items-center p-2 text-sm rounded hover:bg-gray-50 text-gray-700">
+                                    <i class="fas fa-check-circle text-green-500 mr-3 w-5"></i>
+                                    <span>1. What is Robotics?</span>
+                                </a>
+                                <a href="#" class="flex items-center p-2 text-sm rounded bg-primary-50 text-primary-700 font-medium">
+                                    <i class="fas fa-play-circle text-primary-600 mr-3 w-5"></i>
+                                    <span>2. Robotics Safety (Current)</span>
+                                </a>
+                                <a href="#" class="flex items-center p-2 text-sm rounded hover:bg-gray-50 text-gray-700">
+                                    <i class="fas fa-lock text-gray-400 mr-3 w-5"></i>
+                                    <span>3. Introduction to Arduino</span>
+                                </a>
+                                <a href="#" class="flex items-center p-2 text-sm rounded hover:bg-gray-50 text-gray-700">
+                                    <i class="fas fa-lock text-gray-400 mr-3 w-5"></i>
+                                    <span>4. Basic Components</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Module 2 -->
+                        <div class="border-b border-gray-200">
+                            <div class="p-4">
+                                <h4 class="font-medium text-gray-900">Module 2: Programming</h4>
+                                <p class="text-sm text-gray-600">4 lessons • 1.5 hours</p>
+                            </div>
+                            <div class="space-y-1 p-2">
+                                <a href="#" class="flex items-center p-2 text-sm rounded hover:bg-gray-50 text-gray-700">
+                                    <i class="fas fa-lock text-gray-400 mr-3 w-5"></i>
+                                    <span>5. First Program</span>
+                                </a>
+                                <a href="#" class="flex items-center p-2 text-sm rounded hover:bg-gray-50 text-gray-700">
+                                    <i class="fas fa-lock text-gray-400 mr-3 w-5"></i>
+                                    <span>6. Sensor Integration</span>
+                                </a>
+                                <a href="#" class="flex items-center p-2 text-sm rounded hover:bg-gray-50 text-gray-700">
+                                    <i class="fas fa-lock text-gray-400 mr-3 w-5"></i>
+                                    <span>7. Motor Control</span>
+                                </a>
+                                <a href="#" class="flex items-center p-2 text-sm rounded hover:bg-gray-50 text-gray-700">
+                                    <i class="fas fa-lock text-gray-400 mr-3 w-5"></i>
+                                    <span>8. Final Project</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="lg:w-3/4">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                    <!-- Lesson Header -->
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                            <div class="flex-1">
+                                <span class="text-sm text-primary-600 font-medium">Module 1: Basics</span>
+                                <h2 class="text-2xl font-bold text-gray-900 mt-1">Robotics Safety Protocols</h2>
+                                <p class="text-gray-600 mt-2">Learn essential safety measures when working with robotics equipment and electrical components.</p>
+                            </div>
+                            <div class="mt-4 sm:mt-0 flex items-center space-x-2">
+                                <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">Free</span>
+                                <span class="text-sm text-gray-500">15 min</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lesson Content -->
+                    <div class="p-6 space-y-8">
+                        <!-- Text Content -->
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-4">Importance of Safety in Robotics</h3>
+                            <div class="prose max-w-none text-gray-700 space-y-4">
+                                <p>Working with robotics involves electrical components, moving parts, and sometimes high voltages. Proper safety protocols are essential to prevent accidents and ensure a productive learning environment.</p>
+                                <p>Robotics safety encompasses electrical safety, mechanical safety, and operational safety. Each aspect requires specific precautions and awareness.</p>
+                            </div>
+                        </div>
+
+                        <!-- Image with Caption -->
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <img src="img/77.jpg" 
+                                 alt="Robotics Safety Equipment" 
+                                 class="w-full h-48 sm:h-64 object-cover rounded-lg">
+                            <p class="text-sm text-gray-600 text-center mt-2">Proper safety equipment including gloves, goggles, and organized workspace</p>
+                        </div>
+
+                        <!-- Key Safety Points -->
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-4">Key Safety Guidelines</h3>
+                            <div class="grid gap-4 md:grid-cols-2">
+                                <div class="flex items-start space-x-3 p-4 bg-primary-50 rounded-lg">
+                                    <i class="fas fa-bolt text-primary-600 mt-1"></i>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Electrical Safety</h4>
+                                        <p class="text-sm text-gray-600 mt-1">Always disconnect power before working on circuits. Use insulated tools and avoid water near electrical components.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3 p-4 bg-primary-50 rounded-lg">
+                                    <i class="fas fa-cogs text-primary-600 mt-1"></i>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Mechanical Safety</h4>
+                                        <p class="text-sm text-gray-600 mt-1">Keep hands away from moving parts. Secure all components properly before testing.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3 p-4 bg-primary-50 rounded-lg">
+                                    <i class="fas fa-grip-lines text-primary-600 mt-1"></i>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Workspace Safety</h4>
+                                        <p class="text-sm text-gray-600 mt-1">Maintain a clean, organized workspace. Keep food and drinks away from your work area.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3 p-4 bg-primary-50 rounded-lg">
+                                    <i class="fas fa-user-shield text-primary-600 mt-1"></i>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Personal Protection</h4>
+                                        <p class="text-sm text-gray-600 mt-1">Wear safety glasses when soldering or cutting. Use anti-static wrist straps when handling sensitive components.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                     <!-- Video Section -->
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-4">Safety Demonstration</h3>
+                            <div class="bg-gray-900 rounded-lg aspect-video flex items-center justify-center">
+                                <div class="text-center text-white">
+                                    <i class="fas fa-play-circle text-6xl text-primary-400 mb-4"></i>
+                                    <p class="text-lg">Safety Protocols Video Tutorial</p>
+                                    <p class="text-gray-400 text-sm mt-2">5 minutes • Includes practical demonstrations</p>
+                                    <button class="mt-4 bg-primary-600 hover:bg-primary-700 text-white px-6 py-2 rounded-lg">
+                                        Play Video
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="p-6 border-t border-gray-200 bg-gray-50">
+                        <div class="flex flex-col sm:flex-row justify-between space-y-4 sm:space-y-0">
+                            <button class="flex items-center justify-center space-x-2 px-6 py-3 border border-gray-300 rounded-lg hover:bg-white text-gray-700 font-medium">
+                                <i class="fas fa-arrow-left"></i>
+                                <span>Previous Lesson</span>
+                            </button>
+                            <button class="flex items-center justify-center space-x-2 px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium">
+                                <span>Next Lesson</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Resources -->
+                <div class="mt-6 bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Additional Resources</h3>
+                    <div class="grid gap-4 md:grid-cols-2">
+                        <a href="#" class="flex items-center p-4 border border-gray-200 rounded-lg hover:border-primary-300 hover:bg-primary-50">
+                            <i class="fas fa-download text-primary-600 text-xl mr-4"></i>
+                            <div>
+                                <h4 class="font-medium text-gray-900">Safety Guidelines PDF</h4>
+                                <p class="text-sm text-gray-600">Download comprehensive safety manual</p>
+                            </div>
+                        </a>
+                        <a href="#" class="flex items-center p-4 border border-gray-200 rounded-lg hover:border-primary-300 hover:bg-primary-50">
+                            <i class="fas fa-video text-primary-600 text-xl mr-4"></i>
+                            <div>
+                                <h4 class="font-medium text-gray-900">Video Tutorials</h4>
+                                <p class="text-sm text-gray-600">Watch additional safety demonstrations</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="col-span-1">
+                    <div class="flex items-center">
+                        <i class="fas fa-robot text-primary-400 text-2xl mr-2"></i>
+                        <span class="font-bold text-xl text-white">DESIRE TECHNOLOGIES</span>
+                    </div>
+                    <p class="mt-4 text-gray-400">Master robotics and automation with our comprehensive learning platform. Start free or upgrade for professional content.</p>
+                    <div class="mt-6 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-x"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-span-1">
+                    <h3 class="text-lg font-semibold text-white mb-4">Free Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white">Intro to Robotics</a></li>
+                        <li><a href="#" class="hover:text-white">Basic Projects</a></li>
+                        <li><a href="#" class="hover:text-white">Beginner Programming</a></li>
+                        <li><a href="#" class="hover:text-white">STEM Kits for Schools</a></li>
+                        <li><a href="#" class="hover:text-white">DIY Corner</a></li>
+                        <li><a href="#" class="hover:text-white">View All</a></li>
+
+                    </ul>
+                </div>
+                
+                <div class="col-span-1">
+                    <h3 class="text-lg font-semibold text-white mb-4">Premium Courses</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white">Intermediate Robotics</a></li>
+                        <li><a href="#" class="hover:text-white">Applied Automation</a></li>
+                        <li><a href="#" class="hover:text-white">Industrial Automation</a></li>
+                        <li><a href="#" class="hover:text-white">Advanced Programming</a></li>
+                        <li><a href="#" class="hover:text-white">View All</a></li>
+
+                    </ul>
+                </div>
+                
+                <div class="col-span-1">
+                    <h3 class="text-lg font-semibold text-white mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2 text-primary-400"></i>
+                            <span>support@dt.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone mt-1 mr-2 text-primary-400"></i>
+                            <span>+265 999 000 000</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>© 2025 DESIRE Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            
+            // Change icon based on menu state
+            const icon = mobileMenuButton.querySelector('i');
+            if (mobileMenu.classList.contains('open')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                mobileMenu.classList.remove('open');
+                const icon = mobileMenuButton.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    </script>
+    <script>
+        // Mobile sidebar toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarToggle = document.getElementById('sidebar-toggle');
+            const sidebar = document.getElementById('sidebar');
+            const sidebarClose = document.getElementById('sidebar-close');
+    
+            sidebarToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('hidden');
+                sidebar.classList.toggle('block');
+                sidebar.classList.toggle('fixed');
+                sidebar.classList.toggle('inset-0');
+                sidebar.classList.toggle('z-50');
+                sidebar.classList.toggle('bg-white');
+                sidebar.classList.toggle('p-4');
+                sidebar.classList.toggle('overflow-y-auto');
+                
+                // Update button text
+                if (sidebar.classList.contains('hidden')) {
+                    sidebarToggle.innerHTML = '<i class="fas fa-bars mr-2"></i>Show Course Content';
+                } else {
+                    sidebarToggle.innerHTML = '<i class="fas fa-times mr-2"></i>Hide Course Content';
+                }
+            });
+    
+            sidebarClose.addEventListener('click', function() {
+                sidebar.classList.add('hidden');
+                sidebar.classList.remove('block', 'fixed', 'inset-0', 'z-50', 'bg-white', 'p-4', 'overflow-y-auto');
+                sidebarToggle.innerHTML = '<i class="fas fa-bars mr-2"></i>Show Course Content';
+            });
+    
+            // Close sidebar when clicking on a lesson link on mobile
+            const lessonLinks = sidebar.querySelectorAll('a');
+            lessonLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth < 1024) { // Only on mobile
+                        sidebar.classList.add('hidden');
+                        sidebar.classList.remove('block', 'fixed', 'inset-0', 'z-50', 'bg-white', 'p-4', 'overflow-y-auto');
+                        sidebarToggle.innerHTML = '<i class="fas fa-bars mr-2"></i>Show Course Content';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

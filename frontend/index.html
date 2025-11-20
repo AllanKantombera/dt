@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESIRE TECHNOLOGIES - Master Robotics & Automation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Mobile menu animation */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .mobile-menu.open {
+            max-height: 300px;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-robot text-primary-600 text-2xl mr-2"></i>
+                        <span class="font-bold text-xl text-gray-900">DESIRE TECHNOLOGIES</span>
+                    </div>
+                    <div class="hidden md:ml-6 md:flex md:space-x-8">
+                        <a href="index.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-primary-500 text-sm font-medium text-gray-900">Home</a>
+                        <a href="courses.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Courses</a>
+                        <a href="#"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Simulations</a>
+                        <a href="#"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Resources</a>
+                    </div>
+
+                </div>
+                <div class="flex items-center">
+                    <div class="hidden md:flex flex-shrink-0">
+                        <button
+                            class="relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700">
+                            Sign In
+                        </button>
+                    </div>
+                    <!-- Mobile menu button -->
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-button"
+                            class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500">
+                            <span class="sr-only">Open main menu</span>
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile menu, show/hide -->
+            <div id="mobile-menu" class="mobile-menu md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-50 border-t">
+                    <a href="index.html"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 bg-primary-100">Home</a>
+                    <a href="courses.html"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Courses</a>
+                    <a href="#"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Simulations</a>
+                    <a href="#"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Resources</a>
+                    <div class="pt-4 pb-3 border-t border-gray-200">
+                        <button
+                            class="w-full flex justify-center items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700">
+                            Sign In
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold">Master Robotics & Automation</h1>
+                <p class="mt-4 text-xl max-w-2xl mx-auto">Learn STEM skills with free resources or upgrade for in-depth
+                    courses, certificates, and professional projects.</p>
+                <div class="mt-8 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#"
+                        class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-primary-600 bg-white hover:bg-gray-50">
+                        <i class="fas fa-play-circle mr-2"></i> Start Free Lesson
+                    </a>
+
+                </div>
+                <p class="mt-6 text-primary-100">
+                    <i class="fas fa-lock-open mr-2"></i>No login required to get started
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Learning Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-900">Learn for Free</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Get started with robotics, Arduino basics, and
+                    beginner programming with our free resources.</p>
+            </div>
+
+            <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md card-hover border border-gray-100">
+                    <div class="relative h-32 bg-cover bg-center" style="background-image: url('img/img\ \(1\).jpg')">
+                        <div class="absolute -bottom-6 left-6">
+                            <div
+                                class="flex items-center justify-center w-12 h-12 rounded-md bg-white shadow-lg text-primary-600">
+                                <i class="fas fa-book-open text-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-8 p-6">
+                        <h3 class="text-xl font-semibold text-gray-900">Intro to Robotics</h3>
+                        <p class="mt-2 text-gray-600">Learn robotics fundamentals, safety protocols, and Arduino basics
+                            with step-by-step guides.</p>
+                        <div class="mt-4 flex items-center text-sm text-gray-500">
+                            <i class="fas fa-play-circle mr-1"></i>
+                            <span>5 video lessons</span>
+                            <span class="mx-2">•</span>
+                            <i class="fas fa-clock mr-1"></i>
+                            <span>2 hours</span>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 bg-white border-t border-gray-100">
+                        <button
+                            class="w-full bg-primary-600 hover:bg-primary-700 text-white py-2 px-4 rounded-md text-sm font-medium">
+                            Start Learning
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md card-hover border border-gray-100">
+                    <div class="relative h-32 bg-cover bg-center"
+                        style="background-image: url('img/img\ \(1\).png')">
+                        <div class="absolute -bottom-6 left-6">
+                            <div
+                                class="flex items-center justify-center w-12 h-12 rounded-md bg-white shadow-lg text-primary-600">
+                                <i class="fas fa-laptop-code text-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-8 p-6">
+                        <h3 class="text-xl font-semibold text-gray-900">Basic Projects</h3>
+                        <p class="mt-2 text-gray-600">Build traffic lights, line followers, and simple robotic arms with
+                            free simulations and examples.</p>
+                        <div class="mt-4 flex items-center text-sm text-gray-500">
+                            <i class="fas fa-project-diagram mr-1"></i>
+                            <span>7 projects</span>
+                            <span class="mx-2">•</span>
+                            <i class="fas fa-code mr-1"></i>
+                            <span>Simulations included</span>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 bg-white border-t border-gray-100">
+                        <button
+                            class="w-full bg-primary-600 hover:bg-primary-700 text-white py-2 px-4 rounded-md text-sm font-medium">
+                            Try Simulation
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md card-hover border border-gray-100">
+                    <div class="relative h-32 bg-cover bg-center"
+                        style="background-image: url('img/img\ \(2\).jpg')">
+                        <div class="absolute -bottom-6 left-6">
+                            <div
+                                class="flex items-center justify-center w-12 h-12 rounded-md bg-white shadow-lg text-primary-600">
+                                <i class="fas fa-cogs text-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-8 p-6">
+                        <h3 class="text-xl font-semibold text-gray-900">DIY Corner</h3>
+                        <p class="mt-2 text-gray-600">Maker challenges using recycled materials and 3D-print projects.
+                            Build creative solutions with limited resources.</p>
+                        <div class="mt-4 flex items-center text-sm text-gray-500">
+                            <i class="fas fa-recycle mr-1"></i>
+                            <span>Eco-friendly</span>
+                            <span class="mx-2">•</span>
+                            <i class="fas fa-print mr-1"></i>
+                            <span>3D models</span>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 bg-white border-t border-gray-100">
+                        <button
+                            class="w-full bg-primary-600 hover:bg-primary-700 text-white py-2 px-4 rounded-md text-sm font-medium">
+                            View Challenges
+                        </button>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <a href="courses.html" class="inline-flex items-center text-primary-600 font-medium hover:text-primary-700">
+                        Explore all free resources
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+    </section>
+
+    <!-- Upgrade Section -->
+    <section class="py-16 bg-primary-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:flex lg:items-center lg:justify-between">
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-bold">Upgrade for Depth</h2>
+                    <p class="mt-4 text-lg text-primary-100">Master real automation, earn certificates, and access
+                        professional projects with our premium courses.</p>
+
+                    <div class="mt-8 space-y-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div
+                                    class="flex items-center justify-center h-6 w-6 rounded-md bg-primary-600 text-white">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-lg font-medium">Intermediate to Advanced Robotics</p>
+                                <p class="mt-1 text-primary-100">Full system control with Wi-Fi cars, Bluetooth arms,
+                                    and remote control systems.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div
+                                    class="flex items-center justify-center h-6 w-6 rounded-md bg-primary-600 text-white">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-lg font-medium">Industrial Automation</p>
+                                <p class="mt-1 text-primary-100">Mini factories, PLC-style control, process simulation,
+                                    and safety logic.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div
+                                    class="flex items-center justify-center h-6 w-6 rounded-md bg-primary-600 text-white">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-lg font-medium">Certificates & Mentor Support</p>
+                                <p class="mt-1 text-primary-100">Earn recognized certificates and get direct feedback
+                                    from industry experts.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <button class="bg-white hover:bg-gray-100 text-primary-700 font-medium py-3 px-6 rounded-md">
+                            Upgrade Now
+                        </button>
+
+                    </div>
+                </div>
+
+                <div class="mt-10 lg:mt-0 lg:w-2/5">
+                    <div class="bg-primary-900 rounded-lg overflow-hidden shadow-lg">
+                        <div class="p-6 border-b border-primary-700">
+                            <h3 class="text-xl font-semibold">Premium Features</h3>
+                            <p class="mt-1 text-primary-200">Unlock with upgrade</p>
+                        </div>
+                        <div class="p-6">
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <i class="fas fa-graduation-cap text-primary-400 mt-1 mr-3"></i>
+                                    <span>Certificate upon completion</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-chart-line text-primary-400 mt-1 mr-3"></i>
+                                    <span>Progress tracking dashboard</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-user-graduate text-primary-400 mt-1 mr-3"></i>
+                                    <span>Direct mentor support</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-industry text-primary-400 mt-1 mr-3"></i>
+                                    <span>Industrial automation projects</span>
+                                </li>
+
+                            </ul>
+
+                            <div class="mt-8 pt-6 border-t border-primary-700">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <p class="text-sm text-primary-300">Starting at</p>
+                                        <p class="text-2xl font-bold">$29<span
+                                                class="text-sm font-normal text-primary-300">/month</span></p>
+                                    </div>
+                                    <button
+                                        class="bg-primary-600 hover:bg-primary-700 text-white py-2 px-4 rounded-md text-sm font-medium">
+                                        Upgrade to Unlock
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+       <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-900">Premium Courses</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Master real automation, earn certificates, and access professional projects with our premium courses.</p>
+            </div>
+
+            <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md card-hover border border-gray-100">
+                    <div class="relative h-32 bg-cover bg-center" style="background-image: url('img/img\ \(2\).png')">
+                        <div class="absolute -bottom-6 left-6">
+                            <div
+                                class="flex items-center justify-center w-12 h-12 rounded-md bg-white shadow-lg text-primary-600">
+                                <i class="fas fa-robot text-primary-600"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-8 p-6">
+                        <h3 class="text-xl font-semibold text-gray-900">Intermediate Robotics</h3>
+                        <p class="mt-2 text-gray-600">Full system control with Wi-Fi cars, Bluetooth arms, and .....</p>
+                        <div class="mt-4 flex items-center text-sm text-gray-500">
+                            <i class="fas fa-play-circle mr-1"></i>
+                            <span>5 video lessons</span>
+                            <span class="mx-2">•</span>
+                            <i class="fas fa-clock mr-1"></i>
+                            <span>2 hours</span>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 bg-white border-t border-gray-100">
+                        <button
+                            class="w-full bg-primary-600 hover:bg-primary-700 text-white py-2 px-4 rounded-md text-sm font-medium">
+                            Start Learning
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg overflow-hidden shadow-md card-hover border border-gray-100">
+                    <div class="relative h-32 bg-cover bg-center" style="background-image: url('img/img\ \(4\).png')">
+                        <div class="absolute -bottom-6 left-6">
+                            <div
+                                class="flex items-center justify-center w-12 h-12 rounded-md bg-white shadow-lg text-primary-600">
+                                <i class="fas fa-industry text-primary-600"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-8 p-6">
+                        <h3 class="text-xl font-semibold text-gray-900">Industrial Automation</h3>
+                        <p class="mt-2 text-gray-600">Mini factories, PLC-style control, process simulation, and safety logic.</p>
+                        <div class="mt-4 flex items-center text-sm text-gray-500">
+                            <i class="fas fa-play-circle mr-1"></i>
+                            <span>5 video lessons</span>
+                            <span class="mx-2">•</span>
+                            <i class="fas fa-clock mr-1"></i>
+                            <span>2 hours</span>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 bg-white border-t border-gray-100">
+                        <button
+                            class="w-full bg-primary-600 hover:bg-primary-700 text-white py-2 px-4 rounded-md text-sm font-medium">
+                            Start Learning
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg overflow-hidden shadow-md card-hover border border-gray-100">
+                    <div class="relative h-32 bg-cover bg-center" style="background-image: url('img/img\ \(1\).png')">
+                        <div class="absolute -bottom-6 left-6">
+                            <div
+                                class="flex items-center justify-center w-12 h-12 rounded-md bg-white shadow-lg text-primary-600">
+                                <i class="fas fa-brain text-primary-600"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-8 p-6">
+                        <h3 class="text-xl font-semibold text-gray-900">AI & Computer Vision</h3>
+                        <p class="mt-2 text-gray-600">Advanced algorithms, optimization, AI implementation, and ...</p>
+                        <div class="mt-4 flex items-center text-sm text-gray-500">
+                            <i class="fas fa-play-circle mr-1"></i>
+                            <span>5 video lessons</span>
+                            <span class="mx-2">•</span>
+                            <i class="fas fa-clock mr-1"></i>
+                            <span>2 hours</span>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 bg-white border-t border-gray-100">
+                        <button
+                            class="w-full bg-primary-600 hover:bg-primary-700 text-white py-2 px-4 rounded-md text-sm font-medium">
+                            Start Learning
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="mt-12 text-center">
+                    <a href="courses.html" class="inline-flex items-center text-primary-600 font-medium hover:text-primary-700">
+                        Explore all free resources
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-900">How It Works</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Start with free resources and upgrade anytime to
+                    unlock advanced content and certificates.</p>
+            </div>
+
+            <div class="mt-12">
+                <div class="flex flex-col md:flex-row md:space-x-8">
+                    <div class="flex-1 mb-8 md:mb-0">
+                        <div class="flex flex-col items-center text-center">
+                            <div
+                                class="flex items-center justify-center w-16 h-16 rounded-full bg-primary-600 text-white text-xl font-bold">
+                                1</div>
+                            <h3 class="mt-4 text-xl font-semibold text-gray-900">Start for Free</h3>
+                            <p class="mt-2 text-gray-600">Experiment with basic robotics, programming, and simulations
+                                without any login requirements.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex-1 mb-8 md:mb-0">
+                        <div class="flex flex-col items-center text-center">
+                            <div
+                                class="flex items-center justify-center w-16 h-16 rounded-full bg-primary-600 text-white text-xl font-bold">
+                                2</div>
+                            <h3 class="mt-4 text-xl font-semibold text-gray-900">Upgrade Anytime</h3>
+                            <p class="mt-2 text-gray-600">Choose to upgrade to access deeper topics, industrial
+                                projects, and professional tools.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex-1">
+                        <div class="flex flex-col items-center text-center">
+                            <div
+                                class="flex items-center justify-center w-16 h-16 rounded-full bg-primary-600 text-white text-xl font-bold">
+                                3</div>
+                            <h3 class="mt-4 text-xl font-semibold text-gray-900">Earn Certificates</h3>
+                            <p class="mt-2 text-gray-600">Complete courses and capstone projects to earn certificates
+                                with mentor feedback.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-primary-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold">Ready to Start Your STEM Journey?</h2>
+            <p class="mt-4 text-xl max-w-2xl mx-auto">Join thousands of students and professionals learning robotics and
+                automation.</p>
+            <div class="mt-8 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#"
+                    class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-primary-600 bg-white hover:bg-gray-100">
+                    <i class="fas fa-rocket mr-2"></i> Start Free Lesson
+                </a>
+                <a href="#"
+                    class="inline-flex items-center justify-center px-6 py-3 border border-white text-base font-medium rounded-md text-white hover:bg-primary-700">
+                    <i class="fas fa-crown mr-2"></i> Upgrade Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="col-span-1">
+                    <div class="flex items-center">
+                        <i class="fas fa-robot text-primary-400 text-2xl mr-2"></i>
+                        <span class="font-bold text-xl text-white">DESIRE TECHNOLOGIES</span>
+                    </div>
+                    <p class="mt-4 text-gray-400">Master robotics and automation with our comprehensive learning
+                        platform. Start free or upgrade for professional content.</p>
+                    <div class="mt-6 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-x"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-span-1">
+                    <h3 class="text-lg font-semibold text-white mb-4">Free Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white">Intro to Robotics</a></li>
+                        <li><a href="#" class="hover:text-white">Basic Projects</a></li>
+                        <li><a href="#" class="hover:text-white">Beginner Programming</a></li>
+                        <li><a href="#" class="hover:text-white">STEM Kits for Schools</a></li>
+                        <li><a href="#" class="hover:text-white">DIY Corner</a></li>
+                        <li><a href="#" class="hover:text-white">View All</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="col-span-1">
+                    <h3 class="text-lg font-semibold text-white mb-4">Premium Courses</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white">Intermediate Robotics</a></li>
+                        <li><a href="#" class="hover:text-white">Applied Automation</a></li>
+                        <li><a href="#" class="hover:text-white">Industrial Automation</a></li>
+                        <li><a href="#" class="hover:text-white">Advanced Programming</a></li>
+                        <li><a href="#" class="hover:text-white">View All</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="col-span-1">
+                    <h3 class="text-lg font-semibold text-white mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2 text-primary-400"></i>
+                            <span>support@dt.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone mt-1 mr-2 text-primary-400"></i>
+                            <span>+265 999 000 000</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>© 2025 DESIRE Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+
+            // Change icon based on menu state
+            const icon = mobileMenuButton.querySelector('i');
+            if (mobileMenu.classList.contains('open')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                mobileMenu.classList.remove('open');
+                const icon = mobileMenuButton.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    </script>
+</body>
+</html>

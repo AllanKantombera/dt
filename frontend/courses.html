@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESIRE TECHNOLOGIES - Master Robotics & Automation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Mobile menu animation */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .mobile-menu.open {
+            max-height: 300px;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-robot text-primary-600 text-2xl mr-2"></i>
+                        <span class="font-bold text-xl text-gray-900">DESIRE TECHNOLOGIES</span>
+                    </div>
+                    <div class="hidden md:ml-6 md:flex md:space-x-8">
+                        <a href="index.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Home</a>
+                        <a href="courses.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-primary-500 text-sm font-medium text-gray-900">Courses</a>
+                        <a href="#"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Simulations</a>
+                        <a href="#"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Resources</a>
+                    </div>
+
+                </div>
+                <div class="flex items-center">
+                    <div class="hidden md:flex flex-shrink-0">
+                        <button
+                            class="relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700">
+                            Sign In
+                        </button>
+                    </div>
+                    <!-- Mobile menu button -->
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-button"
+                            class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500">
+                            <span class="sr-only">Open main menu</span>
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile menu, show/hide -->
+            <div id="mobile-menu" class="mobile-menu md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-50 border-t">
+                    <a href="index.html"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Home</a>
+                    <a href="#"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 bg-primary-100">Courses</a>
+                    <a href="#"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Simulations</a>
+                    <a href="#"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Resources</a>
+                    <div class="pt-4 pb-3 border-t border-gray-200">
+                        <button
+                            class="w-full flex justify-center items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700">
+                            Sign In
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+    <!-- Courses Page Main Content -->
+    <main class="min-h-screen bg-gray-50">
+
+
+        <!-- Free Courses Section -->
+        <section class="py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-12">
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900">Free Courses</h2>
+                        <p class="mt-2 text-gray-600">Start your STEM journey with these free introductory courses</p>
+                    </div>
+                    <div class="mt-4 md:mt-0 flex items-center space-x-2">
+                        <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-sm font-medium">No
+                            Login Required</span>
+                    </div>
+                </div>
+
+                <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    <!-- Free Course 1 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 card-hover">
+                        <div class="h-2 bg-primary-500"></div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-robot text-primary-600"></i>
+                                    </div>
+                                    <span
+                                        class="bg-primary-100 text-primary-700 px-2 py-1 rounded text-xs font-medium">FREE</span>
+                                </div>
+                                <div class="text-sm text-gray-500">2 hours</div>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Intro to Robotics</h3>
+                            <p class="text-gray-600 mb-4">Learn robotics fundamentals, safety protocols, and Arduino
+                                basics.</p>
+                            <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-play-circle mr-1"></i>
+                                    <span>5 lessons</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-chart-bar mr-1"></i>
+                                    <span>Beginner</span>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <button
+                                    class="w-full bg-primary-600 hover:bg-primary-700 text-white py-2 px-4 rounded-lg text-sm font-medium transition duration-150">
+                                    Start Learning
+                                </button>
+                                <button
+                                    class="w-full border border-gray-300 hover:bg-gray-50 text-gray-700 py-2 px-4 rounded-lg text-sm font-medium transition duration-150">
+                                    <i class="fas fa-eye mr-2"></i>Preview
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Free Course 2 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 card-hover">
+                        <div class="h-2 bg-primary-500"></div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-laptop-code text-primary-600"></i>
+                                    </div>
+                                    <span
+                                        class="bg-primary-100 text-primary-700 px-2 py-1 rounded text-xs font-medium">FREE</span>
+                                </div>
+                                <div class="text-sm text-gray-500">3 hours</div>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Basic Programming</h3>
+                            <p class="text-gray-600 mb-4">Master the fundamentals of programming with visual logic and
+                                code examples.</p>
+                            <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-play-circle mr-1"></i>
+                                    <span>7 lessons</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-chart-bar mr-1"></i>
+                                    <span>Beginner</span>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <button
+                                    class="w-full bg-primary-600 hover:bg-primary-700 text-white py-2 px-4 rounded-lg text-sm font-medium transition duration-150">
+                                    Start Learning
+                                </button>
+                                <button
+                                    class="w-full border border-gray-300 hover:bg-gray-50 text-gray-700 py-2 px-4 rounded-lg text-sm font-medium transition duration-150">
+                                    <i class="fas fa-eye mr-2"></i>Preview
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Free Course 3 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 card-hover">
+                        <div class="h-2 bg-primary-500"></div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-cogs text-primary-600"></i>
+                                    </div>
+                                    <span
+                                        class="bg-primary-100 text-primary-700 px-2 py-1 rounded text-xs font-medium">FREE</span>
+                                </div>
+                                <div class="text-sm text-gray-500">4 hours</div>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">DIY Projects</h3>
+                            <p class="text-gray-600 mb-4">Build creative solutions with recycled materials and 3D-print
+                                projects.</p>
+                            <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-play-circle mr-1"></i>
+                                    <span>8 projects</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-chart-bar mr-1"></i>
+                                    <span>Beginner</span>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <button
+                                    class="w-full bg-primary-600 hover:bg-primary-700 text-white py-2 px-4 rounded-lg text-sm font-medium transition duration-150">
+                                    Start Learning
+                                </button>
+                                <button
+                                    class="w-full border border-gray-300 hover:bg-gray-50 text-gray-700 py-2 px-4 rounded-lg text-sm font-medium transition duration-150">
+                                    <i class="fas fa-eye mr-2"></i>Preview
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="#" class="bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-sm font-medium">
+                    View All
+                </a>
+            </div>
+        </section>
+
+        <!-- Premium Courses Section -->
+        <section class="py-16 bg-primary-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-12">
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900">Premium Courses</h2>
+                        <p class="mt-2 text-gray-600">Unlock advanced content, certificates, and professional projects
+                        </p>
+                    </div>
+                    <div class="mt-4 md:mt-0 flex items-center space-x-2">
+                        <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-sm font-medium">Login
+                            Required</span>
+                        <span
+                            class="bg-primary-200 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Certificates</span>
+                    </div>
+                </div>
+
+                <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    <!-- Premium Course 1 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-primary-200 card-hover">
+                        <div class="h-2 bg-primary-600"></div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-wifi text-primary-600"></i>
+                                    </div>
+                                    <span
+                                        class="bg-primary-600 text-white px-2 py-1 rounded text-xs font-medium">PREMIUM</span>
+                                </div>
+                                <div class="text-sm text-gray-500">8 hours</div>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Intermediate Robotics</h3>
+                            <p class="text-gray-600 mb-4">Full system control with Wi-Fi cars, Bluetooth arms, and
+                                remote control systems.</p>
+                            <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-play-circle mr-1"></i>
+                                    <span>12 lessons</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-chart-bar mr-1"></i>
+                                    <span>Intermediate</span>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <button
+                                    class="w-full bg-primary-600 hover:bg-primary-700 text-white py-2 px-4 rounded-lg text-sm font-medium transition duration-150">
+                                    <i class="fas fa-crown mr-2"></i>Upgrade to Access
+                                </button>
+                                <button
+                                    class="w-full border border-primary-300 hover:bg-primary-50 text-primary-700 py-2 px-4 rounded-lg text-sm font-medium transition duration-150">
+                                    <i class="fas fa-info-circle mr-2"></i>Course Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Premium Course 2 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-primary-200 card-hover">
+                        <div class="h-2 bg-primary-600"></div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-industry text-primary-600"></i>
+                                    </div>
+                                    <span
+                                        class="bg-primary-600 text-white px-2 py-1 rounded text-xs font-medium">PREMIUM</span>
+                                </div>
+                                <div class="text-sm text-gray-500">10 hours</div>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Industrial Automation</h3>
+                            <p class="text-gray-600 mb-4">Mini factories, PLC-style control, process simulation, and
+                                safety logic.</p>
+                            <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-play-circle mr-1"></i>
+                                    <span>15 lessons</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-chart-bar mr-1"></i>
+                                    <span>Advanced</span>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <button
+                                    class="w-full bg-primary-600 hover:bg-primary-700 text-white py-2 px-4 rounded-lg text-sm font-medium transition duration-150">
+                                    <i class="fas fa-crown mr-2"></i>Upgrade to Access
+                                </button>
+                                <button
+                                    class="w-full border border-primary-300 hover:bg-primary-50 text-primary-700 py-2 px-4 rounded-lg text-sm font-medium transition duration-150">
+                                    <i class="fas fa-info-circle mr-2"></i>Course Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Premium Course 3 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-primary-200 card-hover">
+                        <div class="h-2 bg-primary-600"></div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-brain text-primary-600"></i>
+                                    </div>
+                                    <span
+                                        class="bg-primary-600 text-white px-2 py-1 rounded text-xs font-medium">PREMIUM</span>
+                                </div>
+                                <div class="text-sm text-gray-500">12 hours</div>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">AI & Computer Vision</h3>
+                            <p class="text-gray-600 mb-4">Advanced algorithms, optimization, AI implementation, and
+                                computer vision modules.</p>
+                            <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-play-circle mr-1"></i>
+                                    <span>18 lessons</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-chart-bar mr-1"></i>
+                                    <span>Expert</span>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <button
+                                    class="w-full bg-primary-600 hover:bg-primary-700 text-white py-2 px-4 rounded-lg text-sm font-medium transition duration-150">
+                                    <i class="fas fa-crown mr-2"></i>Upgrade to Access
+                                </button>
+                                <button
+                                    class="w-full border border-primary-300 hover:bg-primary-50 text-primary-700 py-2 px-4 rounded-lg text-sm font-medium transition duration-150">
+                                    <i class="fas fa-info-circle mr-2"></i>Course Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <a href="#" class="bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-sm font-medium">
+                    View All
+                </a>
+            </div>
+        </section>
+
+        <!-- Course Categories -->
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900">Course Categories</h2>
+                    <p class="mt-4 text-lg text-gray-600">Browse courses by subject area</p>
+                </div>
+
+                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                    <!-- Category 1 -->
+                    <div
+                        class="bg-primary-50 rounded-xl p-6 text-center border border-primary-100 hover:border-primary-300 transition duration-150">
+                        <div
+                            class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-robot text-primary-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Robotics</h3>
+                        <p class="text-gray-600 mb-4">From basic to advanced robotic systems</p>
+                        <span class="text-primary-600 font-medium">8 Courses</span>
+                    </div>
+
+                    <!-- Category 2 -->
+                    <div
+                        class="bg-primary-50 rounded-xl p-6 text-center border border-primary-100 hover:border-primary-300 transition duration-150">
+                        <div
+                            class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-code text-primary-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Programming</h3>
+                        <p class="text-gray-600 mb-4">Coding skills for automation</p>
+                        <span class="text-primary-600 font-medium">6 Courses</span>
+                    </div>
+
+                    <!-- Category 3 -->
+                    <div
+                        class="bg-primary-50 rounded-xl p-6 text-center border border-primary-100 hover:border-primary-300 transition duration-150">
+                        <div
+                            class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-industry text-primary-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Automation</h3>
+                        <p class="text-gray-600 mb-4">Industrial and home automation</p>
+                        <span class="text-primary-600 font-medium">5 Courses</span>
+                    </div>
+
+                    <!-- Category 4 -->
+                    <div
+                        class="bg-primary-50 rounded-xl p-6 text-center border border-primary-100 hover:border-primary-300 transition duration-150">
+                        <div
+                            class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-project-diagram text-primary-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Projects</h3>
+                        <p class="text-gray-600 mb-4">Hands-on practical applications</p>
+                        <span class="text-primary-600 font-medium">10+ Projects</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Path Section -->
+        <section class="py-16 bg-primary-900 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold">Recommended Learning Path</h2>
+                    <p class="mt-4 text-primary-100 max-w-2xl mx-auto">Follow this structured path to master robotics
+                        and automation</p>
+                </div>
+
+                <div class="grid gap-8 md:grid-cols-3">
+                    <!-- Step 1 -->
+                    <div class="text-center">
+                        <div
+                            class="w-16 h-16 bg-primary-700 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                            1</div>
+                        <h3 class="text-xl font-semibold mb-2">Foundation</h3>
+                        <p class="text-primary-200 mb-4">Start with free courses to build fundamental knowledge</p>
+                        <ul class="text-primary-200 text-sm space-y-1">
+                            <li>Intro to Robotics</li>
+                            <li>Basic Programming</li>
+                            <li>DIY Projects</li>
+                        </ul>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="text-center">
+                        <div
+                            class="w-16 h-16 bg-primary-700 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                            2</div>
+                        <h3 class="text-xl font-semibold mb-2">Intermediate</h3>
+                        <p class="text-primary-200 mb-4">Upgrade to access intermediate concepts and systems</p>
+                        <ul class="text-primary-200 text-sm space-y-1">
+                            <li>Intermediate Robotics</li>
+                            <li>Applied Automation</li>
+                            <li>Smart Systems & IoT</li>
+                        </ul>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="text-center">
+                        <div
+                            class="w-16 h-16 bg-primary-700 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                            3</div>
+                        <h3 class="text-xl font-semibold mb-2">Advanced</h3>
+                        <p class="text-primary-200 mb-4">Master professional-level automation and earn certificates</p>
+                        <ul class="text-primary-200 text-sm space-y-1">
+                            <li>Industrial Automation</li>
+                            <li>AI & Computer Vision</li>
+                            <li>Capstone Projects</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="col-span-1">
+                    <div class="flex items-center">
+                        <i class="fas fa-robot text-primary-400 text-2xl mr-2"></i>
+                        <span class="font-bold text-xl text-white">DESIRE TECHNOLOGIES</span>
+                    </div>
+                    <p class="mt-4 text-gray-400">Master robotics and automation with our comprehensive learning
+                        platform. Start free or upgrade for professional content.</p>
+                    <div class="mt-6 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-x"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-span-1">
+                    <h3 class="text-lg font-semibold text-white mb-4">Free Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white">Intro to Robotics</a></li>
+                        <li><a href="#" class="hover:text-white">Basic Projects</a></li>
+                        <li><a href="#" class="hover:text-white">Beginner Programming</a></li>
+                        <li><a href="#" class="hover:text-white">STEM Kits for Schools</a></li>
+                        <li><a href="#" class="hover:text-white">DIY Corner</a></li>
+                        <li><a href="#" class="hover:text-white">View All</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="col-span-1">
+                    <h3 class="text-lg font-semibold text-white mb-4">Premium Courses</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white">Intermediate Robotics</a></li>
+                        <li><a href="#" class="hover:text-white">Applied Automation</a></li>
+                        <li><a href="#" class="hover:text-white">Industrial Automation</a></li>
+                        <li><a href="#" class="hover:text-white">Advanced Programming</a></li>
+                        <li><a href="#" class="hover:text-white">View All</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="col-span-1">
+                    <h3 class="text-lg font-semibold text-white mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2 text-primary-400"></i>
+                            <span>support@dt.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone mt-1 mr-2 text-primary-400"></i>
+                            <span>+265 999 000 000</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>© 2025 DESIRE Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+
+            // Change icon based on menu state
+            const icon = mobileMenuButton.querySelector('i');
+            if (mobileMenu.classList.contains('open')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                mobileMenu.classList.remove('open');
+                const icon = mobileMenuButton.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    </script>
+</body>
+</html>
