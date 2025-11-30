@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESIRE TECHNOLOGIES - Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+        }
+
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-robot text-primary-600 text-2xl mr-2"></i>
+                        <span class="font-bold text-xl text-gray-900">DESIRE TECHNOLOGIES</span>
+                    </div>
+                    <div class="hidden md:ml-6 md:flex md:space-x-8">
+                        <a href="index.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Home</a>
+                        <a href="courses.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Courses</a>
+                        <a href="about.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">About Us</a>
+                        <a href="shop.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-primary-500 text-sm font-medium text-gray-900">Products</a>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <div class="hidden md:flex flex-shrink-0 space-x-4">
+                        <a href="#"
+                            class="relative inline-flex items-center px-4 py-2 text-sm font-medium rounded-md text-gray-700 bg-gray-100 hover:bg-gray-200">
+                            <i class="fas fa-shopping-cart mr-2"></i> Cart (0)
+                        </a>
+                        <a href="login.html"
+                            class="relative inline-flex items-center px-4 py-2 border border-primary-600 text-sm font-medium rounded-md text-primary-600 bg-white hover:bg-primary-50">
+                            <i class="fas fa-sign-in-alt mr-2"></i> Sign In
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="py-12 sm:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Shop Header -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">
+                    Our Store: Kits and Parts
+                </h1>
+                <p class="mt-3 text-xl text-gray-600 max-w-2xl mx-auto">
+                    Explore high-quality, 3D-printed robotics kits and essential electronic components for your next project.
+                </p>
+                <div class="mt-8 flex justify-center space-x-4">
+                    <button class="px-6 py-2 rounded-full text-sm font-medium bg-primary-600 text-white shadow-md hover:bg-primary-700 transition">
+                        Robotics Kits
+                    </button>
+                    <button class="px-6 py-2 rounded-full text-sm font-medium bg-white border border-gray-300 text-gray-700 hover:bg-gray-100 transition">
+                        Electronic Parts
+                    </button>
+                </div>
+            </div>
+
+            <!-- Robotics Kits Section -->
+            <section id="kits" class="mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-primary-500 pb-2 flex items-center">
+                    <i class="fas fa-robot text-primary-600 mr-3"></i> Featured Robotics Kits
+                </h2>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+                    <div class="bg-white rounded-xl shadow-lg border border-gray-100 product-card overflow-hidden">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-500 text-6xl">
+                            <i class="fas fa-traffic-light text-primary-600"></i>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Traffic Light Starter Kit</h3>
+                            <p class="text-sm text-gray-600 mb-3">A beginner STEM kit for learning basic digital I/O and timing with Arduino. Includes 3D-printed enclosure.</p>
+                            <p class="text-2xl font-bold text-primary-700 mb-4">$29.99</p>
+                            <div class="space-y-2">
+                                <button class="w-full py-2 rounded-lg text-white bg-primary-600 hover:bg-primary-700 font-medium transition">
+                                    Add to Cart
+                                </button>
+                                <a href="#" class="w-full block text-center py-2 text-sm text-primary-600 hover:text-primary-800 transition">
+                                    View Assembly Guide <i class="fas fa-arrow-right ml-1 text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg border border-gray-100 product-card overflow-hidden">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-500 text-6xl">
+                            <i class="fas fa-road text-primary-600"></i>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Autonomous Line Follower</h3>
+                            <p class="text-sm text-gray-600 mb-3">Intermediate vehicle kit focusing on sensor arrays and PID control. Chassis is fully 3D-printable.</p>
+                            <p class="text-2xl font-bold text-primary-700 mb-4">$59.99</p>
+                            <div class="space-y-2">
+                                <button class="w-full py-2 rounded-lg text-white bg-primary-600 hover:bg-primary-700 font-medium transition">
+                                    Add to Cart
+                                </button>
+                                <a href="#" class="w-full block text-center py-2 text-sm text-primary-600 hover:text-primary-800 transition">
+                                    View Assembly Guide <i class="fas fa-arrow-right ml-1 text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg border border-gray-100 product-card overflow-hidden">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-500 text-6xl">
+                            <i class="fas fa-hand-rock text-primary-600"></i>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">4-Axis Bluetooth Arm Kit</h3>
+                            <p class="text-sm text-gray-600 mb-3">Advanced control kit for kinematics, programming, and motor control via a mobile app.</p>
+                            <p class="text-2xl font-bold text-primary-700 mb-4">$99.99</p>
+                            <div class="space-y-2">
+                                <button class="w-full py-2 rounded-lg text-white bg-primary-600 hover:bg-primary-700 font-medium transition">
+                                    Add to Cart
+                                </button>
+                                <a href="#" class="w-full block text-center py-2 text-sm text-primary-600 hover:text-primary-800 transition">
+                                    View Assembly Guide <i class="fas fa-arrow-right ml-1 text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg border border-gray-100 product-card overflow-hidden">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-500 text-6xl">
+                            <i class="fas fa-cloud-sun-rain text-primary-600"></i>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">IoT Weather Station Kit</h3>
+                            <p class="text-sm text-gray-600 mb-3">Learn about Wi-Fi communication, API data, and cloud connectivity with a custom sensor array.</p>
+                            <p class="text-2xl font-bold text-primary-700 mb-4">$75.00</p>
+                            <div class="space-y-2">
+                                <button class="w-full py-2 rounded-lg text-white bg-primary-600 hover:bg-primary-700 font-medium transition">
+                                    Add to Cart
+                                </button>
+                                <a href="#" class="w-full block text-center py-2 text-sm text-primary-600 hover:text-primary-800 transition">
+                                    View Wiring Diagram <i class="fas fa-arrow-right ml-1 text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="parts" class="mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-primary-500 pb-2 flex items-center">
+                    <i class="fas fa-microchip text-primary-600 mr-3"></i> Electronic Components
+                </h2>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+                    <div class="bg-white rounded-xl shadow-lg border border-gray-100 product-card overflow-hidden">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-500 text-6xl">
+                            <i class="fas fa-laptop-code text-primary-600"></i>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Arduino Nano Microcontroller</h3>
+                            <p class="text-sm text-gray-600 mb-3">Compact, versatile board perfect for embedded projects and small robots.</p>
+                            <p class="text-2xl font-bold text-primary-700 mb-4">$4.50</p>
+                            <button class="w-full py-2 rounded-lg text-white bg-primary-600 hover:bg-primary-700 font-medium transition">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg border border-gray-100 product-card overflow-hidden">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-500 text-6xl">
+                            <i class="fas fa-circle-notch text-primary-600"></i>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">SG90 Micro Servo (5-pack)</h3>
+                            <p class="text-sm text-gray-600 mb-3">Essential motors for robotic arms, pan/tilt mechanisms, and small actuators.</p>
+                            <p class="text-2xl font-bold text-primary-700 mb-4">$8.99</p>
+                            <button class="w-full py-2 rounded-lg text-white bg-primary-600 hover:bg-primary-700 font-medium transition">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg border border-gray-100 product-card overflow-hidden">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-500 text-6xl">
+                            <i class="fas fa-podcast text-primary-600"></i>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">HC-SR04 Ultrasonic Sensor</h3>
+                            <p class="text-sm text-gray-600 mb-3">Reliable sensor for distance measurement, obstacle avoidance, and mapping.</p>
+                            <p class="text-2xl font-bold text-primary-700 mb-4">$1.50</p>
+                            <button class="w-full py-2 rounded-lg text-white bg-primary-600 hover:bg-primary-700 font-medium transition">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg border border-gray-100 product-card overflow-hidden">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-500 text-6xl">
+                            <i class="fas fa-battery-three-quarters text-primary-600"></i>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">3.7V 1200mAh LiPo Battery</h3>
+                            <p class="text-sm text-gray-600 mb-3">Lightweight, high-capacity power source for mobile robotics projects.</p>
+                            <p class="text-2xl font-bold text-primary-700 mb-4">$12.00</p>
+                            <button class="w-full py-2 rounded-lg text-white bg-primary-600 hover:bg-primary-700 font-medium transition">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 py-6 mt-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2025 DESIRE TECHNOLOGIES. All rights reserved. | <a href="#" class="hover:text-primary-400">Store Policies</a></p>
+            </div>
+        </footer>
+
+    </main>
+
+</body>
+
+</html>
