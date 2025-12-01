@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DESIRE TECHNOLOGIES - Shop</title>
+    <title>DESIRE TECHNOLOGIES - Community & Outreach</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -35,13 +35,13 @@
             background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
         }
 
-        .product-card {
+        .story-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .product-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+        .story-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
     </style>
 </head>
@@ -61,7 +61,7 @@
                         <a href="courses.html"
                             class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Courses</a>
                         <a href="shop.html"
-                        class="inline-flex items-center px-1 pt-1 border-b-2 border-primary-500 text-sm font-medium text-gray-900">Shop</a>
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Shop</a>
                         <a href="products.html"
                             class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Products</a>
                         <a href="industrial.html"
@@ -69,7 +69,7 @@
                         <a href="engineering&innovations.html"
                             class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Innovation</a>
                         <a href="community.html"
-                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Community</a>
+                        class="inline-flex items-center px-1 pt-1 border-b-2 border-primary-500 text-sm font-medium text-gray-900">Community</a>
                         <a href="shools&educators.html"
                             class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Schools</a>
                         <a href="aboutus.html"
@@ -125,191 +125,211 @@
         </div>
     </nav>
 
+
+
     <main>
         <div class="gradient-bg py-16 sm:py-24">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <i class="fas fa-cubes text-white text-5xl mb-4 opacity-80"></i>
+                <i class="fas fa-users text-white text-5xl mb-4 opacity-80"></i>
                 <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
-                    Our Store: Kits and Parts
+                    Robotics for Every Child
                 </h1>
-                <p class="mt-3 text-xl text-white max-w-2xl mx-auto">
-                    Explore high-quality, 3D-printed robotics kits and essential electronic components for your next
-                    project.
+                <p class="mt-4 max-w-3xl mx-auto text-xl text-primary-100">
+                    Bridging the digital divide by bringing STEM education to underprivileged learners and rural schools
+                    across Africa.
                 </p>
-
+                <div class="mt-8 flex justify-center gap-4">
+                    <a href="#partner"
+                        class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-primary-600 bg-white hover:bg-gray-50 transition">
+                        <i class="fas fa-handshake mr-2"></i> Partner With Us
+                    </a>
+                </div>
             </div>
         </div>
-        </div><br>
 
-        <section id="kits" class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-primary-500 pb-2 flex items-center">
-                <i class="fas fa-robot text-primary-600 mr-3"></i>Robotics Kits
-            </h2>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-
-                <div class="bg-white rounded-xl shadow-lg border border-gray-100 product-card overflow-hidden">
-                    <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-500 text-6xl">
-                        <i class="fas fa-traffic-light text-primary-600"></i>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Traffic Light Starter Kit</h3>
-                        <p class="text-sm text-gray-600 mb-3">A beginner STEM kit for learning basic digital I/O and
-                            timing with Arduino. Includes 3D-printed enclosure.</p>
-                        <p class="text-2xl font-bold text-primary-700 mb-4">$29.99</p>
-                        <div class="space-y-2">
-                            <button
-                                class="w-full py-2 rounded-lg text-white bg-primary-600 hover:bg-primary-700 font-medium transition">
-                                Add to Cart
-                            </button>
-                            <a href="#"
-                                class="w-full block text-center py-2 text-sm text-primary-600 hover:text-primary-800 transition">
-                                View Assembly Guide <i class="fas fa-arrow-right ml-1 text-xs"></i>
-                            </a>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Empowering Underprivileged Learners</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Talent is equally distributed, but opportunity is not. Our outreach program focuses on providing
+                        kits, mentorship, and free workshops to schools that lack funding for STEM resources.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <span
+                                    class="flex items-center justify-center h-10 w-10 rounded-full bg-primary-100 text-primary-600">
+                                    <i class="fas fa-school"></i>
+                                </span>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-gray-900">Rural School Roadshows</h4>
+                                <p class="text-gray-600 text-sm">Mobile labs traveling to remote areas to host 2-day
+                                    robotics bootcamps.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <span
+                                    class="flex items-center justify-center h-10 w-10 rounded-full bg-primary-100 text-primary-600">
+                                    <i class="fas fa-laptop-house"></i>
+                                </span>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-gray-900">Community Hubs</h4>
+                                <p class="text-gray-600 text-sm">Setting up permanent "Maker Corners" in community
+                                    centers with shared tools and 3D printers.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="bg-white rounded-xl shadow-lg border border-gray-100 product-card overflow-hidden">
-                    <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-500 text-6xl">
-                        <i class="fas fa-road text-primary-600"></i>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Autonomous Line Follower</h3>
-                        <p class="text-sm text-gray-600 mb-3">Intermediate vehicle kit focusing on sensor arrays and
-                            PID control. Chassis is fully 3D-printable.</p>
-                        <p class="text-2xl font-bold text-primary-700 mb-4">$59.99</p>
-                        <div class="space-y-2">
-                            <button
-                                class="w-full py-2 rounded-lg text-white bg-primary-600 hover:bg-primary-700 font-medium transition">
-                                Add to Cart
-                            </button>
-                            <a href="#"
-                                class="w-full block text-center py-2 text-sm text-primary-600 hover:text-primary-800 transition">
-                                View Assembly Guide <i class="fas fa-arrow-right ml-1 text-xs"></i>
-                            </a>
+                <div class="mt-12 lg:mt-0">
+                    <div class="rounded-2xl shadow-xl overflow-hidden">
+                        <div class="h-64 sm:h-80 bg-gray-200 flex items-center justify-center relative">
+                            <i class="fas fa-child text-6xl text-gray-400"></i>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <span class="absolute bottom-4 left-4 text-white font-bold text-lg">Workshop at Chilo
+                                Village</span>
                         </div>
                     </div>
                 </div>
-
-                <div class="bg-white rounded-xl shadow-lg border border-gray-100 product-card overflow-hidden">
-                    <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-500 text-6xl">
-                        <i class="fas fa-hand-rock text-primary-600"></i>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">4-Axis Bluetooth Arm Kit</h3>
-                        <p class="text-sm text-gray-600 mb-3">Advanced control kit for kinematics, programming, and
-                            motor control via a mobile app.</p>
-                        <p class="text-2xl font-bold text-primary-700 mb-4">$99.99</p>
-                        <div class="space-y-2">
-                            <button
-                                class="w-full py-2 rounded-lg text-white bg-primary-600 hover:bg-primary-700 font-medium transition">
-                                Add to Cart
-                            </button>
-                            <a href="#"
-                                class="w-full block text-center py-2 text-sm text-primary-600 hover:text-primary-800 transition">
-                                View Assembly Guide <i class="fas fa-arrow-right ml-1 text-xs"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-lg border border-gray-100 product-card overflow-hidden">
-                    <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-500 text-6xl">
-                        <i class="fas fa-cloud-sun-rain text-primary-600"></i>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">IoT Weather Station Kit</h3>
-                        <p class="text-sm text-gray-600 mb-3">Learn about Wi-Fi communication, API data, and cloud
-                            connectivity with a custom sensor array.</p>
-                        <p class="text-2xl font-bold text-primary-700 mb-4">$75.00</p>
-                        <div class="space-y-2">
-                            <button
-                                class="w-full py-2 rounded-lg text-white bg-primary-600 hover:bg-primary-700 font-medium transition">
-                                Add to Cart
-                            </button>
-                            <a href="#"
-                                class="w-full block text-center py-2 text-sm text-primary-600 hover:text-primary-800 transition">
-                                View Wiring Diagram <i class="fas fa-arrow-right ml-1 text-xs"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-        </section>
+        </div>
 
-        <section id="parts" class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-primary-500 pb-2 flex items-center">
-                <i class="fas fa-microchip text-primary-600 mr-3"></i> Electronic Components
-            </h2>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-
-                <div class="bg-white rounded-xl shadow-lg border border-gray-100 product-card overflow-hidden">
-                    <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-500 text-6xl">
-                        <i class="fas fa-laptop-code text-primary-600"></i>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Arduino Nano Microcontroller</h3>
-                        <p class="text-sm text-gray-600 mb-3">Compact, versatile board perfect for embedded projects
-                            and small robots.</p>
-                        <p class="text-2xl font-bold text-primary-700 mb-4">$4.50</p>
-                        <button
-                            class="w-full py-2 rounded-lg text-white bg-primary-600 hover:bg-primary-700 font-medium transition">
-                            Add to Cart
-                        </button>
-                    </div>
+        <div class="bg-gray-50 py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900">Voices of Change</h2>
+                    <p class="mt-3 text-lg text-gray-600">Real stories from the students and teachers we work with.</p>
                 </div>
 
-                <div class="bg-white rounded-xl shadow-lg border border-gray-100 product-card overflow-hidden">
-                    <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-500 text-6xl">
-                        <i class="fas fa-circle-notch text-primary-600"></i>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">SG90 Micro Servo (5-pack)</h3>
-                        <p class="text-sm text-gray-600 mb-3">Essential motors for robotic arms, pan/tilt
-                            mechanisms, and small actuators.</p>
-                        <p class="text-2xl font-bold text-primary-700 mb-4">$8.99</p>
-                        <button
-                            class="w-full py-2 rounded-lg text-white bg-primary-600 hover:bg-primary-700 font-medium transition">
-                            Add to Cart
-                        </button>
-                    </div>
-                </div>
+                <div class="grid md:grid-cols-3 gap-8">
 
-                <div class="bg-white rounded-xl shadow-lg border border-gray-100 product-card overflow-hidden">
-                    <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-500 text-6xl">
-                        <i class="fas fa-podcast text-primary-600"></i>
+                    <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-6 story-card flex flex-col">
+                        <div class="flex items-center mb-6">
+                            <div
+                                class="h-12 w-12 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600 font-bold text-xl mr-4">
+                                S
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-900">Samuel K.</h4>
+                                <p class="text-sm text-gray-500">Grade 10 Student</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic mb-6 flex-grow">
+                            "I never touched a computer before Desire Technologies came to our school. Now I have built
+                            a traffic light system using Arduino. I want to be an engineer to solve traffic problems in
+                            my city."
+                        </p>
+                        <div class="text-primary-600 text-sm font-semibold">
+                            <i class="fas fa-star"></i> Future Engineer
+                        </div>
                     </div>
-                    <div class="p-5">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">HC-SR04 Ultrasonic Sensor</h3>
-                        <p class="text-sm text-gray-600 mb-3">Reliable sensor for distance measurement, obstacle
-                            avoidance, and mapping.</p>
-                        <p class="text-2xl font-bold text-primary-700 mb-4">$1.50</p>
-                        <button
-                            class="w-full py-2 rounded-lg text-white bg-primary-600 hover:bg-primary-700 font-medium transition">
-                            Add to Cart
-                        </button>
-                    </div>
-                </div>
 
-                <div class="bg-white rounded-xl shadow-lg border border-gray-100 product-card overflow-hidden">
-                    <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-500 text-6xl">
-                        <i class="fas fa-battery-three-quarters text-primary-600"></i>
+                    <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-6 story-card flex flex-col">
+                        <div class="flex items-center mb-6">
+                            <div
+                                class="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold text-xl mr-4">
+                                M
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-900">Mrs. Banda</h4>
+                                <p class="text-sm text-gray-500">Science Teacher</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic mb-6 flex-grow">
+                            "The downloadable lesson plans changed how I teach physics. My students are no longer just
+                            reading from books; they are building circuits and seeing science in action."
+                        </p>
+                        <div class="text-primary-600 text-sm font-semibold">
+                            <i class="fas fa-chalkboard-teacher"></i> Partner School
+                        </div>
                     </div>
-                    <div class="p-5">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">3.7V 1200mAh LiPo Battery</h3>
-                        <p class="text-sm text-gray-600 mb-3">Lightweight, high-capacity power source for mobile
-                            robotics projects.</p>
-                        <p class="text-2xl font-bold text-primary-700 mb-4">$12.00</p>
-                        <button
-                            class="w-full py-2 rounded-lg text-white bg-primary-600 hover:bg-primary-700 font-medium transition">
-                            Add to Cart
-                        </button>
-                    </div>
-                </div>
 
+                    <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-6 story-card flex flex-col">
+                        <div class="flex items-center mb-6">
+                            <div
+                                class="h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold text-xl mr-4">
+                                L
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-900">Linda T.</h4>
+                                <p class="text-sm text-gray-500">University Volunteer</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic mb-6 flex-grow">
+                            "Volunteering as a mentor has been the highlight of my year. Seeing the spark in a child's
+                            eyes when their robot moves for the first time is priceless."
+                        </p>
+                        <div class="text-primary-600 text-sm font-semibold">
+                            <i class="fas fa-hands-helping"></i> Community Mentor
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </section>
+        </div>
+
+        <div class="bg-primary-600 py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <div class="text-4xl font-bold text-white mb-2">5,000+</div>
+                        <div class="text-primary-200 text-sm uppercase tracking-wide">Students Reached</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold text-white mb-2">50+</div>
+                        <div class="text-primary-200 text-sm uppercase tracking-wide">School Partners</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold text-white mb-2">1,200</div>
+                        <div class="text-primary-200 text-sm uppercase tracking-wide">Kits Donated</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold text-white mb-2">100%</div>
+                        <div class="text-primary-200 text-sm uppercase tracking-wide">Volunteer Driven</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="partner" class="py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Get Involved</h2>
+                <p class="text-lg text-gray-600 mb-10">
+                    Whether you are a corporate sponsor, a school administrator, or an individual with a passion for
+                    teaching, there is a place for you in our mission.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div
+                        class="bg-gray-50 p-8 rounded-xl border border-gray-200 hover:border-primary-300 transition cursor-pointer group">
+                        <i
+                            class="fas fa-user-friends text-4xl text-primary-600 mb-4 group-hover:scale-110 transition-transform"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Volunteer</h3>
+                        <p class="text-gray-600 text-sm mb-6">Mentor students, help at workshops, or contribute code to
+                            our open-source curriculum.</p>
+                        <button
+                            class="w-full py-2 rounded-lg text-primary-600 bg-white border border-primary-200 font-bold hover:bg-primary-50 transition">
+                            Join as Volunteer
+                        </button>
+                    </div>
+
+                    <div
+                        class="bg-primary-600 p-8 rounded-xl border border-transparent shadow-xl hover:bg-primary-700 transition cursor-pointer group">
+                        <i
+                            class="fas fa-handshake text-4xl text-white mb-4 group-hover:scale-110 transition-transform"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Partner With Us</h3>
+                        <p class="text-primary-100 text-sm mb-6">Sponsor a school, donate equipment, or collaborate on
+                            large-scale educational initiatives.</p>
+                        <button
+                            class="w-full py-2 rounded-lg text-primary-700 bg-white font-bold hover:bg-gray-100 transition">
+                            Become a Partner
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Footer -->

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESIRE TECHNOLOGIES - About Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+        }
+
+        .section-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+        }
+
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .mobile-menu.open {
+            max-height: 300px;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50">
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-robot text-primary-600 text-2xl mr-2"></i>
+                        <span class="font-bold text-xl text-gray-900">DESIRE TECHNOLOGIES</span>
+                    </div>
+                    <div class="hidden md:ml-6 md:flex md:space-x-4">
+                        <a href="index.html"
+                        class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Home</a>
+                        <a href="courses.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Courses</a>
+                        <a href="shop.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Shop</a>
+                        <a href="products.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Products</a>
+                        <a href="industrial.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Industrial</a>
+                        <a href="engineering&innovations.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Innovation</a>
+                        <a href="community.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Community</a>
+                        <a href="shools&educators.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Schools</a>
+                        <a href="aboutus.html"
+                        class="inline-flex items-center px-1 pt-1 border-b-2 border-primary-500 text-sm font-medium text-gray-900">AboutUs</a>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <div class="hidden md:flex flex-shrink-0 space-x-4">
+                        <a href="login.html"
+                            class="relative inline-flex items-center px-4 py-2 border border-primary-600 text-sm font-medium rounded-md text-primary-600 bg-white hover:bg-primary-50">
+                            <i class="fas fa-sign-in-alt mr-2"></i> Login
+                        </a>
+                    </div>
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-button"
+                            class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500">
+                            <span class="sr-only">Open main menu</span>
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="hidden md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-50 border-t">
+                    <a href="index.html"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 bg-primary-100">Home</a>
+                    <a href="courses.html"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Courses</a>
+                    <a href="shop.html"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">shop</a>
+                    <a href="products.html"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Products</a>
+                    <a href="industrial.html"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Industrial</a>
+                    <a href="engineering&innovations.html"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Innovation</a>
+                    <a href="community.html"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Community</a>
+                    <a href="shools&educators.html"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Schools</a>
+                    <a href="aboutus.html"
+                        class="inline-flex items-center px-1 pt-1 border-b-2 border-primary-500 text-sm font-medium text-gray-900">About
+                        Us</a>
+                    <div class="pt-4 pb-3 border-t border-gray-200">
+                        <a href="login.html"
+                            class="w-full flex justify-center items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700">
+                            <i class="fas fa-sign-in-alt mr-2"></i> Sign In
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <div class="gradient-bg py-16 sm:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <i class="fas fa-graduation-cap text-white text-5xl mb-4 opacity-80"></i>
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
+                    Empowering Africa through Robotics and Automation Education
+                </h1>
+                <p class="mt-4 max-w-3xl mx-auto text-xl text-primary-100">
+                    We are dedicated to cultivating the next generation of African innovators, engineers, and
+                    problem-solvers by blending open-source learning with professional-grade technical training.
+                </p>
+            </div>
+        </div>
+
+        <div class="py-12 sm:py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-gray-900 text-center mb-10">
+                    Our Core Philosophy
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 section-card text-center">
+                        <i class="fas fa-lightbulb text-4xl text-primary-600 mb-3"></i>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Inspire</h3>
+                        <p class="text-gray-600 text-sm">Use engaging, hands-on robotics projects and maker challenges
+                            to spark curiosity in STEM fields, removing initial learning barriers.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 section-card text-center">
+                        <i class="fas fa-book-reader text-4xl text-primary-600 mb-3"></i>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Educate</h3>
+                        <p class="text-gray-600 text-sm">Provide structured, high-quality learning paths, from free
+                            introductory lessons to advanced, certification-level industrial training.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 section-card text-center">
+                        <i class="fas fa-trophy text-4xl text-primary-600 mb-3"></i>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Empower</h3>
+                        <p class="text-gray-600 text-sm">Offer certifications, mentorship, and practical project
+                            experience to prepare learners for real-world professional roles and innovation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- What We Offer Sections -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 space-y-12">
+
+
+            <div class="grid lg:grid-cols-2 gap-8">
+
+                <div class="bg-white p-8 rounded-xl shadow-xl border border-gray-100">
+                    <i class="fas fa-cubes text-3xl text-primary-600 mb-3"></i>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Education and Learning</h3>
+                    <p class="text-gray-600 mb-4">Our curriculum provides a pathway from simple sensor reading to
+                        complex industrial automation logic.</p>
+
+                    <h4 class="text-lg font-semibold text-primary-700">Learn for Free</h4>
+                    <ul class="list-disc list-inside text-gray-700 ml-4 mb-4 text-sm">
+                        <li>Introductory lessons (Arduino basics, safety, text/visual logic).</li>
+                        <li>Free simulations and basic robotics projects.</li>
+                        <li>No login required—start learning instantly.</li>
+                    </ul>
+
+                    <h4 class="text-lg font-semibold text-primary-700">Upgrade for Depth (Premium)</h4>
+                    <ul class="list-disc list-inside text-gray-700 ml-4 text-sm">
+                        <li>Full system control (Wi-Fi car, IoT projects).</li>
+                        <li>Industrial Automation, PLC-style control, and advanced algorithms.</li>
+                        <li>Certification, direct mentor support, and Capstone Projects.</li>
+                    </ul>
+                </div>
+
+                <!-- Products & Innovation -->
+                <div class="bg-white p-8 rounded-xl shadow-xl border border-gray-100">
+                    <i class="fas fa-cogs text-3xl text-primary-600 mb-3"></i>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Innovation and Resources</h3>
+
+                    <div class="space-y-4">
+                        <div class="border-b pb-3">
+                            <h4 class="font-semibold text-gray-900 flex items-center mb-1">
+                                <i class="fas fa-screwdriver-wrench mr-2 text-primary-500"></i> Products & Kits
+                            </h4>
+                            <p class="text-gray-600 text-sm">High-quality, **3D-printed robotics kits** available for
+                                purchase. All kits include assembly guides, wiring diagrams, and example codes.</p>
+                            <a href="#"
+                                class="text-primary-600 text-sm font-medium hover:text-primary-700 mt-2 inline-block">Visit
+                                the Store <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
+                        </div>
+
+                        <div class="border-b pb-3">
+                            <h4 class="font-semibold text-gray-900 flex items-center mb-1">
+                                <i class="fas fa-microchip mr-2 text-primary-500"></i> Automation Solutions
+                            </h4>
+                            <p class="text-gray-600 text-sm">Industrial automation demos and client-ready IoT projects.
+                                Need a custom solution? We design and implement smart systems.</p>
+                            [Image of industrial automation system with robotic arm]
+                            <a href="#"
+                                class="text-primary-600 text-sm font-medium hover:text-primary-700 mt-2 inline-block">Request
+                                Consultation <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
+                        </div>
+
+                        <div>
+                            <h4 class="font-semibold text-gray-900 flex items-center mb-1">
+                                <i class="fas fa-project-diagram mr-2 text-primary-500"></i> Engineering Showcase
+                            </h4>
+                            <p class="text-gray-600 text-sm">A public gallery of our finest student-built robots and
+                                projects, complete with write-ups and code links to inspire the community.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Community & Educators -->
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-xl border border-gray-100">
+                    <i class="fas fa-heart text-3xl text-blue-500 mb-3"></i>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Community & Outreach</h3>
+                    <p class="text-gray-600 mb-4">We are committed to serving the community, particularly through our
+                        work with schools and underprivileged learners.</p>
+
+                    <ul class="list-disc list-inside text-gray-700 ml-4 mb-6 text-sm">
+                        <li>Featuring photos, stories, and testimonials from success students.</li>
+                        <li>Dedicated focus on making robotics accessible to everyone.</li>
+                    </ul>
+                    <a href="#"
+                        class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-primary-600 hover:bg-primary-700 transition duration-150">
+                        <i class="fas fa-handshake mr-2"></i> Partner With Us
+                    </a>
+                </div>
+
+
+                <div class="bg-white p-8 rounded-xl shadow-xl border border-gray-100">
+                    <i class="fas fa-chalkboard-teacher text-3xl text-primary-600 mb-3"></i>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">For Schools & Educators</h3>
+                    <p class="text-gray-600 mb-4">We provide resources designed to help educators successfully adopt
+                        robotics and automation into their classrooms.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle mt-1 mr-2 text-green-500 text-sm"></i>
+                            <span>Downloadable lesson plans and printable guides.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle mt-1 mr-2 text-green-500 text-sm"></i>
+                            <span>STEM kits tailored for classroom activities.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle mt-1 mr-2 text-green-500 text-sm"></i>
+                            <span>Professional development options for teachers.</span>
+                        </li>
+                    </ul>
+                    <a href="#"
+                        class="mt-6 inline-flex items-center text-primary-600 font-medium hover:text-primary-700">
+                        View Educator Resources <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="bg-gray-800 py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center text-white mb-10">
+                    <h2 class="text-3xl font-bold mb-2">Contact DESIRE TECHNOLOGIES</h2>
+                    <p class="text-primary-100 text-lg">We'd love to hear from you—whether it's for learning,
+                        collaboration, or industrial partnership.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                    <div class="bg-gray-700 p-6 rounded-lg text-white text-center">
+                        <i class="fas fa-envelope text-3xl text-primary-400 mb-3"></i>
+                        <h4 class="font-semibold mb-1">General Enquiries</h4>
+                        <p class="text-sm text-primary-100">[Email address provided later]</p>
+                    </div>
+
+                    <div class="bg-gray-700 p-6 rounded-lg text-white text-center">
+                        <i class="fas fa-headset text-3xl text-primary-400 mb-3"></i>
+                        <h4 class="font-semibold mb-1">Technical Support</h4>
+                        <p class="text-sm text-primary-100">[Email address provided later]</p>
+                    </div>
+
+                    <div class="bg-gray-700 p-6 rounded-lg text-white text-center">
+                        <i class="fas fa-share-alt text-3xl text-primary-400 mb-3"></i>
+                        <h4 class="font-semibold mb-1">Connect with us</h4>
+                        <div class="flex justify-center space-x-4 mt-2">
+                            <a href="#" class="text-white hover:text-primary-400"><i
+                                    class="fab fa-linkedin text-xl"></i></a>
+                            <a href="#" class="text-white hover:text-primary-400"><i
+                                    class="fab fa-facebook text-xl"></i></a>
+                            <a href="#" class="text-white hover:text-primary-400"><i
+                                    class="fab fa-twitter text-xl"></i></a>
+                            <a href="#" class="text-white hover:text-primary-400"><i
+                                    class="fab fa-github text-xl"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-700 p-6 rounded-lg text-center flex flex-col justify-between">
+                        <div>
+                            <i class="fas fa-users text-3xl text-primary-400 mb-3"></i>
+                            <h4 class="font-semibold mb-1 text-white">Get Involved</h4>
+                            <p class="text-sm text-primary-100">Volunteer, collaborate, or donate to support our
+                                mission.</p>
+                        </div>
+                        <a href="#"
+                            class="mt-4 w-full text-center text-sm font-medium py-2 rounded-md bg-primary-600 text-white hover:bg-primary-700 transition">
+                            Explore Opportunities
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 border-t border-gray-700  text-gray-400">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="col-span-1">
+                        <div class="flex items-center">
+                            <i class="fas fa-robot text-primary-400 text-2xl mr-2"></i>
+                            <span class="font-bold text-xl text-white">DESIRE TECHNOLOGIES</span>
+                        </div>
+                        <p class="mt-4 text-gray-400">Master robotics and automation with our comprehensive learning
+                            platform. Start free or upgrade for professional content.</p>
+                        <div class="mt-6 flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white">
+                                <i class="fab fa-x"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-span-1">
+                        <h3 class="text-lg font-semibold text-white mb-4">Free Resources</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="hover:text-white">Intro to Robotics</a></li>
+                            <li><a href="#" class="hover:text-white">Basic Projects</a></li>
+                            <li><a href="#" class="hover:text-white">Beginner Programming</a></li>
+                            <li><a href="#" class="hover:text-white">STEM Kits for Schools</a></li>
+                            <li><a href="#" class="hover:text-white">DIY Corner</a></li>
+                            <li><a href="#" class="hover:text-white">View All</a></li>
+
+                        </ul>
+                    </div>
+
+                    <div class="col-span-1">
+                        <h3 class="text-lg font-semibold text-white mb-4">Premium Courses</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="hover:text-white">Intermediate Robotics</a></li>
+                            <li><a href="#" class="hover:text-white">Applied Automation</a></li>
+                            <li><a href="#" class="hover:text-white">Industrial Automation</a></li>
+                            <li><a href="#" class="hover:text-white">Advanced Programming</a></li>
+                            <li><a href="#" class="hover:text-white">View All</a></li>
+
+                        </ul>
+                    </div>
+
+                    <div class="col-span-1">
+                        <h3 class="text-lg font-semibold text-white mb-4">Contact Us</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-envelope mt-1 mr-2 text-primary-400"></i>
+                                <span>support@dt.com</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-phone mt-1 mr-2 text-primary-400"></i>
+                                <span>+265 999 000 000</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-12 pt-8 border-t border-gray-700 text-center text-gray-400">
+                    <p>© 2025 DESIRE Technologies. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+
+    </main>
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            var menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>

@@ -43,7 +43,6 @@
             transform: translateY(-5px);
         }
 
-        /* Mobile menu animation */
         .mobile-menu {
             max-height: 0;
             overflow: hidden;
@@ -57,7 +56,6 @@
 </head>
 
 <body class="font-sans bg-gray-50">
-    <!-- Navigation -->
     <nav class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
@@ -66,26 +64,34 @@
                         <i class="fas fa-robot text-primary-600 text-2xl mr-2"></i>
                         <span class="font-bold text-xl text-gray-900">DESIRE TECHNOLOGIES</span>
                     </div>
-                    <div class="hidden md:ml-6 md:flex md:space-x-8">
+                    <div class="hidden md:ml-6 md:flex md:space-x-4">
                         <a href="index.html"
-                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Home</a>
+                        class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Home</a>
                         <a href="courses.html"
-                            class="inline-flex items-center px-1 pt-1 border-b-2 border-primary-500 text-sm font-medium text-gray-900">Courses</a>
-                        <a href="#"
-                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Simulations</a>
-                        <a href="#"
-                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Resources</a>
+                        class="inline-flex items-center px-1 pt-1 border-b-2 border-primary-500 text-sm font-medium text-gray-900">Courses</a>
+                        <a href="shop.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Shop</a>
+                        <a href="products.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Products</a>
+                        <a href="industrial.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Industrial</a>
+                        <a href="engineering&innovations.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Innovation</a>
+                        <a href="community.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Community</a>
+                        <a href="shools&educators.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Schools</a>
+                        <a href="aboutus.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">AboutUs</a>
                     </div>
-
                 </div>
                 <div class="flex items-center">
-                    <div class="hidden md:flex flex-shrink-0">
-                        <button
-                            class="relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700">
-                            Sign In
-                        </button>
+                    <div class="hidden md:flex flex-shrink-0 space-x-4">
+                        <a href="login.html"
+                            class="relative inline-flex items-center px-4 py-2 border border-primary-600 text-sm font-medium rounded-md text-primary-600 bg-white hover:bg-primary-50">
+                            <i class="fas fa-sign-in-alt mr-2"></i> Login
+                        </a>
                     </div>
-                    <!-- Mobile menu button -->
                     <div class="md:hidden flex items-center">
                         <button id="mobile-menu-button"
                             class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500">
@@ -96,22 +102,32 @@
                 </div>
             </div>
 
-            <!-- Mobile menu, show/hide -->
-            <div id="mobile-menu" class="mobile-menu md:hidden">
+            <div id="mobile-menu" class="hidden md:hidden">
                 <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-50 border-t">
                     <a href="index.html"
-                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Home</a>
-                    <a href="#"
-                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 bg-primary-100">Courses</a>
-                    <a href="#"
-                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Simulations</a>
-                    <a href="#"
-                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Resources</a>
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 bg-primary-100">Home</a>
+                    <a href="courses.html"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Courses</a>
+                    <a href="shop.html"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">shop</a>
+                    <a href="products.html"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Products</a>
+                    <a href="industrial.html"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Industrial</a>
+                    <a href="engineering&innovations.html"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Innovation</a>
+                    <a href="community.html"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Community</a>
+                    <a href="shools&educators.html"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Schools</a>
+                    <a href="aboutus.html"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">About
+                        Us</a>
                     <div class="pt-4 pb-3 border-t border-gray-200">
-                        <button
+                        <a href="login.html"
                             class="w-full flex justify-center items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700">
-                            Sign In
-                        </button>
+                            <i class="fas fa-sign-in-alt mr-2"></i> Sign In
+                        </a>
                     </div>
                 </div>
             </div>
@@ -121,12 +137,9 @@
 
 
 
-
-    <!-- Courses Page Main Content -->
     <main class="min-h-screen bg-gray-50">
 
 
-        <!-- Free Courses Section -->
         <section class="py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-12">
@@ -141,7 +154,6 @@
                 </div>
 
                 <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                    <!-- Free Course 1 -->
                     <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 card-hover">
                         <div class="h-2 bg-primary-500"></div>
                         <div class="p-6">
@@ -181,7 +193,6 @@
                         </div>
                     </div>
 
-                    <!-- Free Course 2 -->
                     <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 card-hover">
                         <div class="h-2 bg-primary-500"></div>
                         <div class="p-6">
@@ -221,7 +232,6 @@
                         </div>
                     </div>
 
-                    <!-- Free Course 3 -->
                     <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 card-hover">
                         <div class="h-2 bg-primary-500"></div>
                         <div class="p-6">
@@ -270,7 +280,6 @@
             </div>
         </section>
 
-        <!-- Premium Courses Section -->
         <section class="py-16 bg-primary-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-12">
@@ -288,7 +297,6 @@
                 </div>
 
                 <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                    <!-- Premium Course 1 -->
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-primary-200 card-hover">
                         <div class="h-2 bg-primary-600"></div>
                         <div class="p-6">
@@ -328,7 +336,6 @@
                         </div>
                     </div>
 
-                    <!-- Premium Course 2 -->
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-primary-200 card-hover">
                         <div class="h-2 bg-primary-600"></div>
                         <div class="p-6">
@@ -368,7 +375,6 @@
                         </div>
                     </div>
 
-                    <!-- Premium Course 3 -->
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-primary-200 card-hover">
                         <div class="h-2 bg-primary-600"></div>
                         <div class="p-6">
@@ -416,7 +422,6 @@
             </div>
         </section>
 
-        <!-- Course Categories -->
         <section class="py-16 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
@@ -425,7 +430,6 @@
                 </div>
 
                 <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-                    <!-- Category 1 -->
                     <div
                         class="bg-primary-50 rounded-xl p-6 text-center border border-primary-100 hover:border-primary-300 transition duration-150">
                         <div
@@ -437,7 +441,6 @@
                         <span class="text-primary-600 font-medium">8 Courses</span>
                     </div>
 
-                    <!-- Category 2 -->
                     <div
                         class="bg-primary-50 rounded-xl p-6 text-center border border-primary-100 hover:border-primary-300 transition duration-150">
                         <div
@@ -449,7 +452,6 @@
                         <span class="text-primary-600 font-medium">6 Courses</span>
                     </div>
 
-                    <!-- Category 3 -->
                     <div
                         class="bg-primary-50 rounded-xl p-6 text-center border border-primary-100 hover:border-primary-300 transition duration-150">
                         <div
@@ -461,7 +463,6 @@
                         <span class="text-primary-600 font-medium">5 Courses</span>
                     </div>
 
-                    <!-- Category 4 -->
                     <div
                         class="bg-primary-50 rounded-xl p-6 text-center border border-primary-100 hover:border-primary-300 transition duration-150">
                         <div
@@ -476,7 +477,6 @@
             </div>
         </section>
 
-        <!-- Learning Path Section -->
         <section class="py-16 bg-primary-900 text-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
@@ -486,7 +486,6 @@
                 </div>
 
                 <div class="grid gap-8 md:grid-cols-3">
-                    <!-- Step 1 -->
                     <div class="text-center">
                         <div
                             class="w-16 h-16 bg-primary-700 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
@@ -499,8 +498,6 @@
                             <li>DIY Projects</li>
                         </ul>
                     </div>
-
-                    <!-- Step 2 -->
                     <div class="text-center">
                         <div
                             class="w-16 h-16 bg-primary-700 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
@@ -514,7 +511,6 @@
                         </ul>
                     </div>
 
-                    <!-- Step 3 -->
                     <div class="text-center">
                         <div
                             class="w-16 h-16 bg-primary-700 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
@@ -607,33 +603,11 @@
     </footer>
 
     <script>
-        // Mobile menu toggle functionality
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('open');
-
-            // Change icon based on menu state
-            const icon = mobileMenuButton.querySelector('i');
-            if (mobileMenu.classList.contains('open')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (event) => {
-            if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
-                mobileMenu.classList.remove('open');
-                const icon = mobileMenuButton.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            var menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
         });
     </script>
 </body>
+
 </html>
