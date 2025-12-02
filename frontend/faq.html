@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESIRE TECHNOLOGIES - Frequently Asked Questions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-robot text-primary-600 text-2xl mr-2"></i>
+                        <span class="font-bold text-xl text-gray-900">DESIRE TECHNOLOGIES</span>
+                    </div>
+                    <div class="hidden md:ml-6 md:flex md:space-x-4">
+                        <a href="index.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-primary-500 text-sm font-medium text-gray-900">Home</a>
+                        <a href="courses.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Courses</a>
+                        <a href="shop.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Shop</a>
+                        <a href="products.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Products</a>
+                        <a href="industrial.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Industrial</a>
+                        <a href="engineering&innovations.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Innovation</a>
+                        <a href="community.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Community</a>
+                        <a href="shools&educators.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">Schools</a>
+                        <a href="aboutus.html"
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium text-gray-500 hover:text-gray-700">AboutUs</a>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <div class="hidden md:flex flex-shrink-0 space-x-4">
+                        <a href="login.html"
+                            class="relative inline-flex items-center px-4 py-2 border border-primary-600 text-sm font-medium rounded-md text-primary-600 bg-white hover:bg-primary-50">
+                            <i class="fas fa-sign-in-alt mr-2"></i> Login
+                        </a>
+                    </div>
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-button"
+                            class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500">
+                            <span class="sr-only">Open main menu</span>
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="hidden md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-50 border-t">
+                    <a href="index.html"
+                        class="inline-flex items-center px-1 pt-1 border-b-2 border-primary-500 text-sm font-medium text-gray-900">Home</a>
+                    <a href="courses.html"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Courses</a>
+                    <a href="shop.html"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">shop</a>
+                    <a href="products.html"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Products</a>
+                    <a href="industrial.html"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Industrial</a>
+                    <a href="engineering&innovations.html"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Innovation</a>
+                    <a href="community.html"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Community</a>
+                    <a href="shools&educators.html"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Schools</a>
+                    <a href="aboutus.html"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">About
+                        Us</a>
+                    <div class="pt-4 pb-3 border-t border-gray-200">
+                        <a href="login.html"
+                            class="w-full flex justify-center items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700">
+                            <i class="fas fa-sign-in-alt mr-2"></i> Sign In
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <header class="bg-primary-600 text-white shadow-lg py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold sm:text-5xl">
+                Frequently Asked Questions
+            </h1>
+            <p class="mt-4 text-xl text-primary-200">
+                Find quick answers for parents, schools, and future innovators.
+            </p>
+        </div>
+    </header>
+
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+        <div class="flex justify-center mb-12">
+            <div class="bg-white p-2 rounded-full shadow-xl flex flex-wrap justify-center gap-2 sm:space-x-2 sm:gap-0">
+                <button id="tab-parents"
+                    class="tab-button px-4 sm:px-6 py-2 sm:py-3 text-sm font-semibold rounded-full bg-primary-600 text-white shadow-md transition duration-200">
+                    <i class="fas fa-users mr-1 sm:mr-2"></i> For Parents
+                </button>
+                <button id="tab-schools"
+                    class="tab-button px-4 sm:px-6 py-2 sm:py-3 text-sm font-medium rounded-full text-gray-700 hover:bg-primary-50 transition duration-200">
+                    <i class="fas fa-school mr-1 sm:mr-2"></i> For Schools & Educators
+                </button>
+                <button id="tab-learners"
+                    class="tab-button px-4 sm:px-6 py-2 sm:py-3 text-sm font-medium rounded-full text-gray-700 hover:bg-primary-50 transition duration-200">
+                    <i class="fas fa-graduation-cap mr-1 sm:mr-2"></i> For Learners
+                </button>
+            </div>
+        </div>
+
+        <!-- FAQ Content Containers -->
+        <div id="faq-content">
+
+            <!-- Parents Section -->
+            <div id="content-parents" class="faq-section space-y-4">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-2">Parents: What You Need to Know</h2>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button
+                        class="faq-toggle w-full flex justify-between items-center p-5 text-lg font-semibold text-left text-gray-700 hover:bg-gray-50 transition duration-150"
+                        data-target="q1">
+                        Is robotics a safe and valuable skill for my child's future?
+                        <i class="fas fa-chevron-down faq-icon transition-transform duration-300"></i>
+                    </button>
+                    <div id="q1" class="faq-answer p-5 pt-0 text-gray-600 hidden">
+                        <p>Absolutely. Our programs focus on practical, hands-on learning in a supervised environment.
+                            Robotics teaches critical skills like logical reasoning, problem-solving, and computational
+                            thinking, which are essential for any future career, not just engineering.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button
+                        class="faq-toggle w-full flex justify-between items-center p-5 text-lg font-semibold text-left text-gray-700 hover:bg-gray-50 transition duration-150"
+                        data-target="q2">
+                        What age group are your courses designed for?
+                        <i class="fas fa-chevron-down faq-icon transition-transform duration-300"></i>
+                    </button>
+                    <div id="q2" class="faq-answer p-5 pt-0 text-gray-600 hidden">
+                        <p>We offer tiered programs ranging from beginner courses for children as young as 8 years old
+                            (with simplified block-based coding) up to advanced industrial automation courses for high
+                            school and university students.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button
+                        class="faq-toggle w-full flex justify-between items-center p-5 text-lg font-semibold text-left text-gray-700 hover:bg-gray-50 transition duration-150"
+                        data-target="q3">
+                        Does my child need to own a robotics kit?
+                        <i class="fas fa-chevron-down faq-icon transition-transform duration-300"></i>
+                    </button>
+                    <div id="q3" class="faq-answer p-5 pt-0 text-gray-600 hidden">
+                        <p>For most beginner and online courses, we provide software simulations and virtual labs.
+                            However, hands-on physical kits are highly recommended for the best experience. Kits can be
+                            purchased or rented directly from DESIRE TECHNOLOGIES.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Schools Section (Starts hidden) -->
+            <div id="content-schools" class="faq-section space-y-4 hidden">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-2">Schools & Educators: Partnership Details
+                </h2>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button
+                        class="faq-toggle w-full flex justify-between items-center p-5 text-lg font-semibold text-left text-gray-700 hover:bg-gray-50 transition duration-150"
+                        data-target="q4">
+                        How can DT integrate robotics into our school curriculum?
+                        <i class="fas fa-chevron-down faq-icon transition-transform duration-300"></i>
+                    </button>
+                    <div id="q4" class="faq-answer p-5 pt-0 text-gray-600 hidden">
+                        <p>We provide full-service integration, including curriculum mapping to national standards,
+                            teacher training workshops, and scalable robotics labs (kits and software). We offer
+                            solutions for science, technology, math, and extracurricular clubs.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button
+                        class="faq-toggle w-full flex justify-between items-center p-5 text-lg font-semibold text-left text-gray-700 hover:bg-gray-50 transition duration-150"
+                        data-target="q5">
+                        Do you offer training for our teaching staff?
+                        <i class="fas fa-chevron-down faq-icon transition-transform duration-300"></i>
+                    </button>
+                    <div id="q5" class="faq-answer p-5 pt-0 text-gray-600 hidden">
+                        <p>Yes, teacher professional development is a core component of our educational partnership. We
+                            offer comprehensive training on the hardware, software, and pedagogical approaches to
+                            teaching robotics effectively, available both online and on-site.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button
+                        class="faq-toggle w-full flex justify-between items-center p-5 text-lg font-semibold text-left text-gray-700 hover:bg-gray-50 transition duration-150"
+                        data-target="q6">
+                        What are the costs involved in setting up a robotics lab?
+                        <i class="fas fa-chevron-down faq-icon transition-transform duration-300"></i>
+                    </button>
+                    <div id="q6" class="faq-answer p-5 pt-0 text-gray-600 hidden">
+                        <p>Costs are variable based on the size of the student body, the chosen curriculum level, and
+                            the quantity of kits required. We offer flexible packages and financing options. Please
+                            contact our institutional sales team for a custom quote.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Learners Section (Starts hidden) -->
+            <div id="content-learners" class="faq-section space-y-4 hidden">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-2">Learners: Getting Started</h2>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button
+                        class="faq-toggle w-full flex justify-between items-center p-5 text-lg font-semibold text-left text-gray-700 hover:bg-gray-50 transition duration-150"
+                        data-target="q7">
+                        Do I need any prior coding or technical knowledge?
+                        <i class="fas fa-chevron-down faq-icon transition-transform duration-300"></i>
+                    </button>
+                    <div id="q7" class="faq-answer p-5 pt-0 text-gray-600 hidden">
+                        <p>Not at all! Our "Introduction to Robotics" course assumes zero prior knowledge. We start with
+                            easy block-based coding and gradually introduce languages like Python and C++ as you
+                            progress.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button
+                        class="faq-toggle w-full flex justify-between items-center p-5 text-lg font-semibold text-left text-gray-700 hover:bg-gray-50 transition duration-150"
+                        data-target="q8">
+                        What kind of projects will I be able to build?
+                        <i class="fas fa-chevron-down faq-icon transition-transform duration-300"></i>
+                    </button>
+                    <div id="q8" class="faq-answer p-5 pt-0 text-gray-600 hidden">
+                        <p>Learners create exciting projects like autonomous line-following cars, robotic arms, smart
+                            home automation systems, and even complex AI-powered devices, depending on the course level.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button
+                        class="faq-toggle w-full flex justify-between items-center p-5 text-lg font-semibold text-left text-gray-700 hover:bg-gray-50 transition duration-150"
+                        data-target="q9">
+                        How long does it take to complete a course?
+                        <i class="fas fa-chevron-down faq-icon transition-transform duration-300"></i>
+                    </button>
+                    <div id="q9" class="faq-answer p-5 pt-0 text-gray-600 hidden">
+                        <p>Most of our core technical courses are designed to be completed in 8-12 weeks when studied
+                            part-time, but our platform is flexible, allowing you to learn at your own pace.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="col-span-1">
+                    <div class="flex items-center">
+                        <i class="fas fa-robot text-primary-400 text-2xl mr-2"></i>
+                        <span class="font-bold text-xl text-white">DESIRE TECHNOLOGIES</span>
+                    </div>
+                    <p class="mt-4 text-gray-400">Master robotics and automation with our comprehensive learning
+                        platform. Start free or upgrade for professional content.</p>
+                    <div class="mt-6 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-x"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-span-1">
+                    <h3 class="text-lg font-semibold text-white mb-4">Free Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white">Intro to Robotics</a></li>
+                        <li><a href="#" class="hover:text-white">Basic Projects</a></li>
+                        <li><a href="#" class="hover:text-white">Beginner Programming</a></li>
+                        <li><a href="#" class="hover:text-white">STEM Kits for Schools</a></li>
+                        <li><a href="#" class="hover:text-white">DIY Corner</a></li>
+                        <li><a href="#" class="hover:text-white">View All</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="col-span-1">
+                    <h3 class="text-lg font-semibold text-white mb-4">Premium Courses</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white">Intermediate Robotics</a></li>
+                        <li><a href="#" class="hover:text-white">Applied Automation</a></li>
+                        <li><a href="#" class="hover:text-white">Industrial Automation</a></li>
+                        <li><a href="#" class="hover:text-white">Advanced Programming</a></li>
+                        <li><a href="#" class="hover:text-white">View All</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="col-span-1">
+                    <h3 class="text-lg font-semibold text-white mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2 text-primary-400"></i>
+                            <span>support@dt.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone mt-1 mr-2 text-primary-400"></i>
+                            <span>+265 999 000 000</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>© 2025 DESIRE Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            var menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const faqSections = document.querySelectorAll('.faq-section');
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+
+            // --- Tab Logic ---
+            const switchTab = (targetId) => {
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('bg-primary-600', 'text-white', 'shadow-md');
+                    btn.classList.add('text-gray-700', 'hover:bg-primary-50');
+                    btn.classList.remove('font-semibold');
+                    btn.classList.add('font-medium');
+                });
+                faqSections.forEach(section => section.classList.add('hidden'));
+
+                const activeBtn = document.getElementById(`tab-${targetId}`);
+                const activeSection = document.getElementById(`content-${targetId}`);
+
+                if (activeBtn) {
+                    activeBtn.classList.add('bg-primary-600', 'text-white', 'shadow-md', 'font-semibold');
+                    activeBtn.classList.remove('text-gray-700', 'hover:bg-primary-50', 'font-medium');
+                }
+                if (activeSection) {
+                    activeSection.classList.remove('hidden');
+                }
+            };
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetId = button.id.replace('tab-', '');
+                    switchTab(targetId);
+                });
+            });
+
+            faqToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const targetId = toggle.getAttribute('data-target');
+                    const answer = document.getElementById(targetId);
+                    const icon = toggle.querySelector('.faq-icon');
+
+                    const isHidden = answer.classList.contains('hidden');
+
+                    faqToggles.forEach(otherToggle => {
+                        const otherId = otherToggle.getAttribute('data-target');
+                        const otherAnswer = document.getElementById(otherId);
+                        const otherIcon = otherToggle.querySelector('.faq-icon');
+
+                        if (otherAnswer !== answer && !otherAnswer.closest('.faq-section').classList.contains('hidden')) {
+                            otherAnswer.classList.add('hidden');
+                            otherIcon.classList.remove('rotate-180');
+                        }
+                    });
+
+                    if (isHidden) {
+                        answer.classList.remove('hidden');
+                        icon.classList.add('rotate-180');
+                    } else {
+                        answer.classList.add('hidden');
+                        icon.classList.remove('rotate-180');
+                    }
+                });
+            });
+
+            switchTab('parents');
+        });
+    </script>
+</body>
+
+</html>
