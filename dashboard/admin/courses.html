@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DT Admin - Dashboard Overview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .sidebar-link.active {
+            background-color: rgba(37, 99, 235, 0.1);
+            color: #2563eb;
+            border-right: 4px solid #2563eb;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50 flex h-screen overflow-hidden">
+
+    <!-- Mobile Sidebar Overlay -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-20 hidden md:hidden"></div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar"
+        class="fixed inset-y-0 left-0 bg-white w-64 shadow-xl transform -translate-x-full md:translate-x-0 md:relative z-30 transition-transform duration-300 ease-in-out">
+        <div class="p-6 flex items-center border-b">
+            <i class="fas fa-robot text-primary-600 text-2xl mr-2"></i>
+            <span class="font-bold text-xl text-gray-900">ADMIN</span>
+        </div>
+
+        <nav class="mt-6 flex-1 overflow-y-auto">
+            <div class="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">Main</div>
+            <a href="index.html"
+                class="sidebar-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-chart-line mr-3 w-5 text-center"></i> Overview
+            </a>
+            <a href="users.html"
+                class="sidebar-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-users mr-3 w-5 text-center"></i> User Management
+            </a>
+            <a href="courses.html"
+                class="sidebar-link active flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-book mr-3 w-5 text-center"></i> Courses
+            </a>
+            <a href="products.html"
+                class="sidebar-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-box mr-3 w-5 text-center"></i> Products
+            </a>
+            <a href="website.html"
+                class="sidebar-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-globe mr-3 w-5 text-center"></i> Website CMS
+            </a>
+
+            <div class="mt-8 px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">Business</div>
+            <a href="payments.html"
+                class="sidebar-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-credit-card mr-3 w-5 text-center"></i> Payments
+            </a>
+            <a href="sales&orders.html"
+                class="sidebar-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-shopping-cart mr-3 w-5 text-center"></i> Sales & Orders
+            </a>
+            <a href="reports.html"
+                class="sidebar-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-file-invoice-dollar mr-3 w-5 text-center"></i>Reports
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 flex flex-col min-w-0 overflow-hidden">
+
+        <!-- Top Header -->
+        <header class="bg-white border-b h-16 flex items-center justify-between px-4 md:px-8">
+            <div class="flex items-center">
+                <button id="mobile-toggle" class="md:hidden p-2 rounded-md text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+                <h2 class="text-xl font-semibold text-gray-800 ml-2 md:ml-0">Dashboard Overview</h2>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <button class="relative p-2 text-gray-400 hover:text-primary-600 transition-colors">
+                    <i class="fas fa-bell text-xl"></i>
+                    <span class="absolute top-0 right-0 h-2 w-2 rounded-full bg-red-500 border-2 border-white"></span>
+                </button>
+                <div class="flex items-center border-l pl-4 ml-4">
+                    <span class="hidden md:block text-sm font-medium text-gray-700 mr-3">System Admin</span>
+                    <img class="h-8 w-8 rounded-full object-cover"
+                        src="https://ui-avatars.com/api/?name=Admin&background=2563eb&color=fff" alt="Admin Avatar">
+                </div>
+            </div>
+        </header>
+
+
+        <div class="flex-1 overflow-y-auto p-4 md:p-8">
+
+            <!-- Course Summary Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center">
+                    <div class="h-12 w-12 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-laptop-code text-xl"></i>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 text-xs uppercase font-bold tracking-wider">Total Courses</p>
+                        <p class="text-2xl font-bold text-gray-900">24</p>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center">
+                    <div class="h-12 w-12 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-unlock text-xl"></i>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 text-xs uppercase font-bold tracking-wider">Free Courses</p>
+                        <p class="text-2xl font-bold text-blue-900">6</p>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center">
+                    <div class="h-12 w-12 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-credit-card text-xl"></i>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 text-xs uppercase font-bold tracking-wider">Paid Courses</p>
+                        <p class="text-2xl font-bold text-gray-900">18</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- All Courses Table -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead class="bg-gray-50 text-gray-400 text-xs uppercase">
+                            <tr>
+                                <th class="px-6 py-4 font-semibold">Course Title</th>
+                                <th class="px-6 py-4 font-semibold">Instructor</th>
+                                <th class="px-6 py-4 font-semibold">Pricing</th>
+                                <th class="px-6 py-4 font-semibold">Students</th>
+                                <th class="px-6 py-4 font-semibold">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100 text-sm">
+
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center">
+                                        <div class="h-10 w-16 bg-gray-200 rounded mr-3 flex-shrink-0 bg-cover bg-center"
+                                            style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=100&q=80')">
+                                        </div>
+                                        <div>
+                                            <div class="font-bold text-gray-900">Introduction to Robotics</div>
+                                            <div class="text-xs text-gray-500">12 Modules • Intermediate</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-gray-600 font-medium">Dr. Isaac Jones</td>
+                                <td class="px-6 py-4">
+                                    <span
+                                        class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-bold uppercase">$299.00</span>
+                                </td>
+                                <td class="px-6 py-4 text-gray-600">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-users mr-2 text-gray-400"></i> 452
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <button
+                                        class="bg-white border border-gray-200 text-gray-700 px-3 py-1.5 rounded-md text-xs font-semibold hover:bg-gray-50 flex items-center">
+                                        <i class="fas fa-eye mr-1.5"></i> View Course
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center">
+                                        <div class="h-10 w-16 bg-gray-200 rounded mr-3 flex-shrink-0 bg-cover bg-center"
+                                            style="background-image: url('https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=100&q=80')">
+                                        </div>
+                                        <div>
+                                            <div class="font-bold text-gray-900">Python for Young Makers</div>
+                                            <div class="text-xs text-gray-500">8 Modules • Beginner</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-gray-600 font-medium">Sarah Smith</td>
+                                <td class="px-6 py-4">
+                                    <span
+                                        class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-bold uppercase">Free</span>
+                                </td>
+                                <td class="px-6 py-4 text-gray-600">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-users mr-2 text-gray-400"></i> 1,204
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <button
+                                        class="bg-white border border-gray-200 text-gray-700 px-3 py-1.5 rounded-md text-xs font-semibold hover:bg-gray-50 flex items-center">
+                                        <i class="fas fa-eye mr-1.5"></i> View Course
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center">
+                                        <div class="h-10 w-16 bg-gray-200 rounded mr-3 flex-shrink-0 bg-cover bg-center"
+                                            style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=100&q=80')">
+                                        </div>
+                                        <div>
+                                            <div class="font-bold text-gray-900">Advanced Arduino Systems</div>
+                                            <div class="text-xs text-gray-500">20 Modules • Advanced</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-gray-600 font-medium">Michael Chen</td>
+                                <td class="px-6 py-4">
+                                    <span
+                                        class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-bold uppercase">$450.00</span>
+                                </td>
+                                <td class="px-6 py-4 text-gray-600">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-users mr-2 text-gray-400"></i> 128
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <button
+                                        class="bg-white border border-gray-200 text-gray-700 px-3 py-1.5 rounded-md text-xs font-semibold hover:bg-gray-50 flex items-center">
+                                        <i class="fas fa-eye mr-1.5"></i> View Course
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- Create Course Modal -->
+    <div id="courseModal" class="fixed inset-0 z-50 flex items-center justify-center hidden">
+        <div onclick="closeModal()" class="absolute inset-0 bg-black bg-opacity-50 modal-overlay"></div>
+        <div
+            class="relative bg-white w-full max-w-lg mx-4 rounded-2xl shadow-2xl modal-container transform scale-95 opacity-0">
+            <div class="p-6 border-b flex justify-between items-center">
+                <h3 class="text-xl font-bold text-gray-900">Create New Course</h3>
+                <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600"><i
+                        class="fas fa-times"></i></button>
+            </div>
+
+            <form class="p-6 space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Course Title</label>
+                    <input type="text" placeholder="Enter course name"
+                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none">
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Pricing Model</label>
+                        <select id="pricing-select" onchange="togglePriceInput()"
+                            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none">
+                            <option value="paid">Paid</option>
+                            <option value="free">Free</option>
+                        </select>
+                    </div>
+                    <div id="price-container">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Price (USD)</label>
+                        <input type="number" placeholder="299.00"
+                            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Assigned Instructor</label>
+                    <select
+                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none">
+                        <option>Dr. Isaac Jones</option>
+                        <option>Sarah Smith</option>
+                        <option>Michael Chen</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Course Thumbnail URL</label>
+                    <input type="text" placeholder="https://image-link.com/photo.jpg"
+                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:outline-none">
+                </div>
+
+                <div class="pt-4">
+                    <button type="submit"
+                        class="w-full bg-primary-600 text-white py-3 rounded-lg font-bold hover:bg-primary-700 shadow-lg shadow-primary-200 transition-all">
+                        Publish Course
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Sidebar Logic
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+        }
+
+        mobileToggle.addEventListener('click', toggleSidebar);
+        overlay.addEventListener('click', toggleSidebar);
+
+        // Modal Logic
+        const modal = document.getElementById('courseModal');
+        const modalBody = modal.querySelector('.modal-container');
+
+        function openModal() {
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modalBody.classList.remove('scale-95', 'opacity-0');
+                modalBody.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            modalBody.classList.remove('scale-100', 'opacity-100');
+            modalBody.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Form Logic
+        function togglePriceInput() {
+            const select = document.getElementById('pricing-select');
+            const priceContainer = document.getElementById('price-container');
+            if (select.value === 'free') {
+                priceContainer.style.opacity = '0.5';
+                priceContainer.querySelector('input').disabled = true;
+                priceContainer.querySelector('input').value = '';
+            } else {
+                priceContainer.style.opacity = '1';
+                priceContainer.querySelector('input').disabled = false;
+            }
+        }
+    </script>
+</body>
+
+</html>

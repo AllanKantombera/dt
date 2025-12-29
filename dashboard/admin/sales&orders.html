@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DT Admin - Dashboard Overview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .sidebar-link.active {
+            background-color: rgba(37, 99, 235, 0.1);
+            color: #2563eb;
+            border-right: 4px solid #2563eb;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50 flex h-screen overflow-hidden">
+
+    <!-- Mobile Sidebar Overlay -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-20 hidden md:hidden"></div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar"
+        class="fixed inset-y-0 left-0 bg-white w-64 shadow-xl transform -translate-x-full md:translate-x-0 md:relative z-30 transition-transform duration-300 ease-in-out">
+        <div class="p-6 flex items-center border-b">
+            <i class="fas fa-robot text-primary-600 text-2xl mr-2"></i>
+            <span class="font-bold text-xl text-gray-900">ADMIN</span>
+        </div>
+
+        <nav class="mt-6 flex-1 overflow-y-auto">
+            <div class="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">Main</div>
+            <a href="index.html"
+                class="sidebar-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-chart-line mr-3 w-5 text-center"></i> Overview
+            </a>
+            <a href="users.html"
+                class="sidebar-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-users mr-3 w-5 text-center"></i> User Management
+            </a>
+            <a href="courses.html"
+                class="sidebar-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-book mr-3 w-5 text-center"></i> Courses
+            </a>
+            <a href="products.html"
+                class="sidebar-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-box mr-3 w-5 text-center"></i> Products
+            </a>
+            <a href="website.html"
+                class="sidebar-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-globe mr-3 w-5 text-center"></i> Website CMS
+            </a>
+
+            <div class="mt-8 px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">Business</div>
+            <a href="payments.html"
+                class="sidebar-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-credit-card mr-3 w-5 text-center"></i> Payments
+            </a>
+            <a href="sales&orders.html"
+                class="sidebar-link active flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-shopping-cart mr-3 w-5 text-center"></i> Sales & Orders
+            </a>
+            <a href="reports.html"
+                class="sidebar-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-file-invoice-dollar mr-3 w-5 text-center"></i>Reports
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 flex flex-col min-w-0 overflow-hidden">
+        <!-- Top Header -->
+        <header class="bg-white border-b h-16 flex items-center justify-between px-4 md:px-8">
+            <div class="flex items-center">
+                <button id="mobile-toggle" class="md:hidden p-2 rounded-md text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+                <h2 class="text-xl font-semibold text-gray-800 ml-2 md:ml-0">Dashboard Overview</h2>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <button class="relative p-2 text-gray-400 hover:text-primary-600 transition-colors">
+                    <i class="fas fa-bell text-xl"></i>
+                    <span class="absolute top-0 right-0 h-2 w-2 rounded-full bg-red-500 border-2 border-white"></span>
+                </button>
+                <div class="flex items-center border-l pl-4 ml-4">
+                    <span class="hidden md:block text-sm font-medium text-gray-700 mr-3">System Admin</span>
+                    <img class="h-8 w-8 rounded-full object-cover"
+                        src="https://ui-avatars.com/api/?name=Admin&background=2563eb&color=fff" alt="Admin Avatar">
+                </div>
+            </div>
+        </header>
+
+        <div class="flex-1 overflow-y-auto p-4 md:p-8">
+
+            <!-- Sales Metrics -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+
+                    </div>
+                    <h4 class="text-gray-400 text-xs font-bold uppercase tracking-wider">Total Orders</h4>
+                    <p class="text-2xl font-bold text-gray-800 mt-1">1,482</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                    </div>
+                    <h4 class="text-gray-400 text-xs font-bold uppercase tracking-wider">Net Sales</h4>
+                    <p class="text-2xl font-bold text-gray-800 mt-1">$42,930.00</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                    </div>
+                    <h4 class="text-gray-400 text-xs font-bold uppercase tracking-wider">Avg. Order Value</h4>
+                    <p class="text-2xl font-bold text-gray-800 mt-1">$28.96</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <span class="text-gray-400 text-xs font-bold">Today</span>
+                    </div>
+                    <h4 class="text-gray-400 text-xs font-bold uppercase tracking-wider">Pending Fulfillment</h4>
+                    <p class="text-2xl font-bold text-gray-800 mt-1">24</p>
+                </div>
+            </div>
+
+            <!-- Orders Filter Bar -->
+            <div
+                class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center space-x-4">
+                    <select
+                        class="bg-gray-50 border-none rounded-lg text-sm font-semibold px-4 py-2 focus:ring-0 cursor-pointer">
+                        <option>All Status</option>
+                        <option>Completed</option>
+                        <option>Processing</option>
+                        <option>Pending</option>
+                    </select>
+                    <select
+                        class="bg-gray-50 border-none rounded-lg text-sm font-semibold px-4 py-2 focus:ring-0 cursor-pointer">
+                        <option>Last 30 Days</option>
+                        <option>Last 7 Days</option>
+                        <option>Last Year</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Orders Table -->
+            <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="bg-gray-50/50 border-b border-gray-100">
+                                <th class="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Order
+                                    ID</th>
+                                <th class="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">
+                                    Customer</th>
+                                <th class="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">
+                                    Product / Course</th>
+                                <th class="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Date
+                                </th>
+                                <th class="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">
+                                    Amount</th>
+                                <th class="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">
+                                    Status</th>
+                                <th
+                                    class="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider text-right">
+                                    Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-50">
+                            <tr class="hover:bg-gray-50/50 transition-colors group">
+                                <td class="px-6 py-4 text-sm font-mono font-bold text-gray-400">#ORD-9920</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-orange-100 text-orange-700 flex items-center justify-center text-[10px] font-bold mr-3">
+                                            AM</div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-gray-800">Alice Miller</p>
+                                            <p class="text-[10px] text-gray-400">alice.m@web.com</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="text-sm text-gray-600 font-medium">IoT Starter Kit</span>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-gray-500">23 Dec 2023</td>
+                                <td class="px-6 py-4 text-sm font-bold text-gray-800">$120.50</td>
+                                <td class="px-6 py-4">
+                                    <span
+                                        class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-blue-50 text-blue-600 border border-blue-100">PROCESSING</span>
+                                </td>
+                                <td class="px-6 py-4 text-right">
+                                    <button class="text-gray-400 hover:text-primary-600 transition-colors p-2"><i
+                                            class="fas fa-ellipsis-v"></i></button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50/50 transition-colors group">
+                                <td class="px-6 py-4 text-sm font-mono font-bold text-gray-400">#ORD-9919</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-gray-100 text-gray-700 flex items-center justify-center text-[10px] font-bold mr-3">
+                                            RK</div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-gray-800">Robert King</p>
+                                            <p class="text-[10px] text-gray-400">rob.k@gmail.com</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="text-sm text-gray-600 font-medium">Python for Robotics</span>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-gray-500">22 Dec 2023</td>
+                                <td class="px-6 py-4 text-sm font-bold text-gray-800">$35.00</td>
+                                <td class="px-6 py-4">
+                                    <span
+                                        class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-yellow-50 text-yellow-600 border border-yellow-100">PENDING</span>
+                                </td>
+                                <td class="px-6 py-4 text-right">
+                                    <button class="text-gray-400 hover:text-primary-600 transition-colors p-2"><i
+                                            class="fas fa-ellipsis-v"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Footer Summary -->
+            <div class="grid grid-cols-1 lg:grid-cols-1 gap-6">
+                <div class="lg:col-span-2 bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+                    <h3 class="text-sm font-bold text-gray-800 mb-4 uppercase tracking-widest">Recent Activity</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-4"></div>
+                            <div>
+                                <p class="text-sm font-medium text-gray-700">Order <span
+                                        class="font-bold">#ORD-9921</span> was shipped via FedEx</p>
+                                <p class="text-[10px] text-gray-400 font-bold uppercase">Today at 10:45 AM</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-2 h-2 bg-primary-500 rounded-full mt-2 mr-4"></div>
+                            <div>
+                                <p class="text-sm font-medium text-gray-700">Payment received from <span
+                                        class="font-bold">Alice Miller</span> ($120.50)</p>
+                                <p class="text-[10px] text-gray-400 font-bold uppercase">Yesterday at 4:20 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </main>
+
+    <script>
+        // Sidebar Toggle for Mobile
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+        }
+
+        mobileToggle.addEventListener('click', toggleSidebar);
+        overlay.addEventListener('click', toggleSidebar);
+    </script>
+</body>
+
+</html>

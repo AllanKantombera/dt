@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DT Admin - Dashboard Overview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .sidebar-link.active {
+            background-color: rgba(37, 99, 235, 0.1);
+            color: #2563eb;
+            border-right: 4px solid #2563eb;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50 flex h-screen overflow-hidden">
+
+    <!-- Mobile Sidebar Overlay -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-20 hidden md:hidden"></div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="fixed inset-y-0 left-0 bg-white w-64 shadow-xl transform -translate-x-full md:translate-x-0 md:relative z-30 transition-transform duration-300 ease-in-out">
+        <div class="p-6 flex items-center border-b">
+            <i class="fas fa-robot text-primary-600 text-2xl mr-2"></i>
+            <span class="font-bold text-xl text-gray-900">ADMIN</span>
+        </div>
+        
+        <nav class="mt-6 flex-1 overflow-y-auto">
+            <div class="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">Main</div>
+            <a href="index.html"
+                class="sidebar-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-chart-line mr-3 w-5 text-center"></i> Overview
+            </a>
+            <a href="users.html"
+                class="sidebar-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-users mr-3 w-5 text-center"></i> User Management
+            </a>
+            <a href="courses.html"
+                class="sidebar-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-book mr-3 w-5 text-center"></i> Courses
+            </a>
+            <a href="products.html"
+                class="sidebar-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-box mr-3 w-5 text-center"></i> Products
+            </a>
+            <a href="website.html"
+                class="sidebar-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-globe mr-3 w-5 text-center"></i> Website CMS
+            </a>
+
+            <div class="mt-8 px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">Business</div>
+            <a href="payments.html"
+                class="sidebar-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-credit-card mr-3 w-5 text-center"></i> Payments
+            </a>
+            <a href="sales&orders.html"
+                class="sidebar-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-shopping-cart mr-3 w-5 text-center"></i> Sales & Orders
+            </a>
+            <a href="reports.html"
+                class="sidebar-link active flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-file-invoice-dollar mr-3 w-5 text-center"></i>Reports
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content  -->
+    <main class="flex-1 flex flex-col min-w-0 overflow-hidden">
+        <!-- Top Header -->
+        <header class="bg-white border-b h-16 flex items-center justify-between px-4 md:px-8">
+            <div class="flex items-center">
+                <button id="mobile-toggle" class="md:hidden p-2 rounded-md text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+                <h2 class="text-xl font-semibold text-gray-800 ml-2 md:ml-0">Dashboard Overview</h2>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <button class="relative p-2 text-gray-400 hover:text-primary-600 transition-colors">
+                    <i class="fas fa-bell text-xl"></i>
+                    <span class="absolute top-0 right-0 h-2 w-2 rounded-full bg-red-500 border-2 border-white"></span>
+                </button>
+                <div class="flex items-center border-l pl-4 ml-4">
+                    <span class="hidden md:block text-sm font-medium text-gray-700 mr-3">System Admin</span>
+                    <img class="h-8 w-8 rounded-full object-cover" src="https://ui-avatars.com/api/?name=Admin&background=2563eb&color=fff" alt="Admin Avatar">
+                </div>
+            </div>
+        </header>
+
+        <div class="flex-1 overflow-y-auto p-4 md:p-8">
+            
+           
+            <div class="mb-10">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-sm font-bold text-gray-500 uppercase tracking-widest">User Distribution</h3>
+                    <span class="text-xs text-primary-600 font-semibold bg-primary-50 px-2 py-1 rounded">Live Data</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <!-- Total Users -->
+                    <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm relative overflow-hidden group">
+                        <div class="flex justify-between items-start relative z-10">
+                            <div>
+                                <p class="text-gray-400 text-xs font-bold mb-1 uppercase tracking-tighter">Total Platform Users</p>
+                                <p class="text-3xl font-black text-gray-900">24,512</p>
+                            </div>
+                            <div class="p-3 bg-primary-50 rounded-xl text-primary-600 transition-colors group-hover:bg-primary-600 group-hover:text-white">
+                                <i class="fas fa-users text-xl"></i>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <!-- Students -->
+                    <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm relative overflow-hidden group">
+                        <div class="flex justify-between items-start relative z-10">
+                            <div>
+                                <p class="text-gray-400 text-xs font-bold mb-1 uppercase tracking-tighter">Active Students</p>
+                                <p class="text-3xl font-black text-gray-900">23,900</p>
+                            </div>
+                            <div class="p-3 bg-primary-50 rounded-xl text-primary-600 transition-colors group-hover:bg-primary-600 group-hover:text-white">
+                                <i class="fas fa-user-graduate text-xl"></i>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <!-- Tutors -->
+                    <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm relative overflow-hidden group">
+                        <div class="flex justify-between items-start relative z-10">
+                            <div>
+                                <p class="text-gray-400 text-xs font-bold mb-1 uppercase tracking-tighter">Verified Tutors</p>
+                                <p class="text-3xl font-black text-gray-900">580</p>
+                            </div>
+                            <div class="p-3 bg-primary-50 rounded-xl text-primary-600 transition-colors group-hover:bg-primary-600 group-hover:text-white">
+                                <i class="fas fa-chalkboard-teacher text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Admins -->
+                    <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm relative overflow-hidden group">
+                        <div class="flex justify-between items-start relative z-10">
+                            <div>
+                                <p class="text-gray-400 text-xs font-bold mb-1 uppercase tracking-tighter">System Admins</p>
+                                <p class="text-3xl font-black text-gray-900">32</p>
+                            </div>
+                            <div class="p-3 bg-primary-50 rounded-xl text-primary-600 transition-colors group-hover:bg-primary-600 group-hover:text-white">
+                                <i class="fas fa-user-shield text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+                <!--  Course Performance -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-primary-50 text-primary-600 rounded flex items-center justify-center mr-3">
+                                <i class="fas fa-book-open text-sm"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Course Completion Trends</h4>
+                        </div>
+                        <select class="text-xs font-semibold bg-gray-50 border border-gray-100 rounded-lg px-3 py-1 outline-none text-gray-600">
+                            <option>Monthly View</option>
+                            <option>Weekly View</option>
+                        </select>
+                    </div>
+                    <div class="h-[250px] w-full">
+                        <canvas id="courseChart"></canvas>
+                    </div>
+                </div>
+
+                <!--  Revenue Analytics -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-primary-50 text-primary-600 rounded flex items-center justify-center mr-3">
+                                <i class="fas fa-hand-holding-usd text-sm"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Monthly Revenue Stream</h4>
+                        </div>
+                        <div class="flex items-center space-x-2 text-[10px] font-bold text-gray-400 uppercase">
+                            <span class="flex items-center"><span class="w-2 h-2 bg-primary-600 rounded-full mr-1"></span> Sales</span>
+                        </div>
+                    </div>
+                    <div class="h-[250px] w-full">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product & Sales Details -->
+            <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                <div class="p-6 border-b border-gray-50 bg-gray-50/30 flex justify-between items-center">
+                    <div class="flex items-center">
+                        <i class="fas fa-boxes text-primary-600 mr-3"></i>
+                        <h4 class="font-bold text-gray-800 uppercase tracking-tight text-sm">Product Sales Intelligence</h4>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 divide-x divide-gray-100">
+                    <!-- Top Product -->
+                    <div class="p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center mr-4 text-primary-600">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <h5 class="text-xs font-bold text-gray-400 uppercase tracking-widest">Bestseller</h5>
+                        </div>
+                        <p class="font-black text-xl text-gray-900">Arduino Uno R3</p>
+                        <p class="text-sm text-gray-500 mb-4">1,402 units total sales</p>
+                        <div class="flex items-center text-xs font-bold text-primary-600">
+                            <i class="fas fa-chart-line mr-2"></i> High Demand Item
+                        </div>
+                    </div>
+                    
+                    
+            </div>
+        </div>
+
+            
+    </main>
+
+    <script>
+        // Sidebar Toggle for Mobile
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+        }
+
+        mobileToggle.addEventListener('click', toggleSidebar);
+        overlay.addEventListener('click', toggleSidebar);
+
+        // Use a consistent blue for all charts
+        const primaryColor = '#2563eb';
+        const primaryLight = '#93c5fd';
+
+        // Course Analytics Chart
+        const courseCtx = document.getElementById('courseChart').getContext('2d');
+        new Chart(courseCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Intro to IoT', 'Robotics', 'Arduino', 'Python', 'AI'],
+                datasets: [{
+                    label: 'Completion %',
+                    data: [82, 65, 48, 79, 52],
+                    backgroundColor: primaryColor,
+                    borderRadius: 8,
+                    barThickness: 32
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { beginAtZero: true, max: 100, ticks: { font: { size: 11 } }, grid: { color: '#f3f4f6' } },
+                    x: { grid: { display: false }, ticks: { font: { size: 11 } } }
+                }
+            }
+        });
+
+        // Revenue Analytics Chart
+        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        new Chart(revenueCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Revenue',
+                    data: [4200, 5800, 5100, 7200, 8900, 10500],
+                    borderColor: primaryColor,
+                    backgroundColor: 'rgba(37, 99, 235, 0.05)',
+                    fill: true,
+                    tension: 0.4,
+                    borderWidth: 3,
+                    pointRadius: 0,
+                    pointHoverRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { ticks: { callback: (v) => '$' + (v/1000) + 'k', font: { size: 11 } }, grid: { color: '#f3f4f6' } },
+                    x: { grid: { display: false }, ticks: { font: { size: 11 } } }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

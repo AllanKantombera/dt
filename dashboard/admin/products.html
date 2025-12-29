@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DT Admin - Dashboard Overview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .sidebar-link.active {
+            background-color: rgba(37, 99, 235, 0.1);
+            color: #2563eb;
+            border-right: 4px solid #2563eb;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50 flex h-screen overflow-hidden">
+
+    <!-- Mobile Sidebar Overlay -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-20 hidden md:hidden"></div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar"
+        class="fixed inset-y-0 left-0 bg-white w-64 shadow-xl transform -translate-x-full md:translate-x-0 md:relative z-30 transition-transform duration-300 ease-in-out">
+        <div class="p-6 flex items-center border-b">
+            <i class="fas fa-robot text-primary-600 text-2xl mr-2"></i>
+            <span class="font-bold text-xl text-gray-900">ADMIN</span>
+        </div>
+
+        <nav class="mt-6 flex-1 overflow-y-auto">
+            <div class="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">Main</div>
+            <a href="index.html"
+                class="sidebar-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-chart-line mr-3 w-5 text-center"></i> Overview
+            </a>
+            <a href="users.html"
+                class="sidebar-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-users mr-3 w-5 text-center"></i> User Management
+            </a>
+            <a href="courses.html"
+                class="sidebar-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-book mr-3 w-5 text-center"></i> Courses
+            </a>
+            <a href="products.html"
+                class="sidebar-link active flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-box mr-3 w-5 text-center"></i> Products
+            </a>
+            <a href="website.html"
+                class="sidebar-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-globe mr-3 w-5 text-center"></i> Website CMS
+            </a>
+
+            <div class="mt-8 px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">Business</div>
+            <a href="payments.html"
+                class="sidebar-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-credit-card mr-3 w-5 text-center"></i> Payments
+            </a>
+            <a href="sales&orders.html"
+                class="sidebar-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-shopping-cart mr-3 w-5 text-center"></i> Sales & Orders
+            </a>
+            <a href="reports.html"
+                class="sidebar-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="fas fa-file-invoice-dollar mr-3 w-5 text-center"></i>Reports
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 flex flex-col min-w-0 overflow-hidden">
+        <!-- Top Header -->
+        <header class="bg-white border-b h-16 flex items-center justify-between px-4 md:px-8">
+            <div class="flex items-center">
+                <button id="mobile-toggle" class="md:hidden p-2 rounded-md text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+                <h2 class="text-xl font-semibold text-gray-800 ml-2 md:ml-0">Products</h2>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <button class="relative p-2 text-gray-400 hover:text-primary-600 transition-colors">
+                    <i class="fas fa-bell text-xl"></i>
+                    <span class="absolute top-0 right-0 h-2 w-2 rounded-full bg-red-500 border-2 border-white"></span>
+                </button>
+                <div class="flex items-center border-l pl-4 ml-4">
+                    <span class="hidden md:block text-sm font-medium text-gray-700 mr-3">System Admin</span>
+                    <img class="h-8 w-8 rounded-full object-cover"
+                        src="https://ui-avatars.com/api/?name=Admin&background=2563eb&color=fff" alt="Admin Avatar">
+                </div>
+            </div>
+        </header>
+
+
+        <div class="flex items-center space-x-4"><br><br>
+            <button onclick="openModal('productModal')"
+                class="bg-primary-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary-700 flex items-center">
+                <i class="fas fa-plus mr-2"></i> Add Product
+            </button>
+        </div>
+
+        <!-- Page Scrollable Content -->
+        <div class="flex-1 overflow-y-auto p-4 md:p-8">
+
+
+
+
+
+            <!-- Inventory Insights -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+                    <p class="text-gray-500 text-xs font-bold uppercase mb-1">Total Products</p>
+                    <p class="text-2xl font-bold">156</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+                    <p class="text-gray-500 text-xs font-bold uppercase mb-1">Low Stock Alerts</p>
+                    <p class="text-2xl font-bold">12</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+                    <p class="text-gray-500 text-xs font-bold uppercase mb-1">Pending Orders</p>
+                    <p class="text-2xl font-bold">45</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+                    <p class="text-gray-500 text-xs font-bold uppercase mb-1">Store Revenue (Mo)</p>
+                    <p class="text-2xl font-bold">$12,400</p>
+                </div>
+            </div>
+
+            <!-- Products Section -->
+            <div class="mb-10">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg font-bold text-gray-800">Inventory List</h3>
+                    <div class="relative">
+                        <input type="text" placeholder="Search products..."
+                            class="pl-9 pr-4 py-1.5 border rounded-lg text-sm focus:ring-1 focus:ring-primary-500 outline-none">
+                        <i class="fas fa-search absolute left-3 top-2.5 text-gray-400 text-xs"></i>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                    <table class="w-full text-left">
+                        <thead class="bg-gray-50 text-gray-400 text-xs uppercase">
+                            <tr>
+                                <th class="px-6 py-4">Product Info</th>
+                                <th class="px-6 py-4">Category</th>
+                                <th class="px-6 py-4">Price</th>
+                                <th class="px-6 py-4">Stock</th>
+                                <th class="px-6 py-4 text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100 text-sm">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 flex items-center">
+                                    <div
+                                        class="h-10 w-10 bg-gray-100 rounded-lg mr-3 flex items-center justify-center text-primary-600">
+                                        <i class="fas fa-microchip"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-gray-900">Arduino Uno R3</div>
+                                        <div class="text-xs text-gray-500">SKU: DT-ARD-001</div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-gray-600">Microcontrollers</td>
+                                <td class="px-6 py-4 font-semibold">$25.00</td>
+                                <td class="px-6 py-4">
+                                    <span class="text-gray-900 font-medium">42</span>
+                                    <div class="w-24 bg-gray-100 h-1.5 rounded-full mt-1">
+                                        <div class="bg-green-500 h-1.5 rounded-full" style="width: 70%"></div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-right">
+                                    <button class="text-gray-400 hover:text-primary-600 p-2"><i
+                                            class="fas fa-edit"></i></button>
+                                    <button class="text-gray-400 hover:text-red-600 p-2"><i
+                                            class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 flex items-center">
+                                    <div
+                                        class="h-10 w-10 bg-gray-100 rounded-lg mr-3 flex items-center justify-center text-primary-600">
+                                        <i class="fas fa-robot"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-gray-900">DT Rover Kit V2</div>
+                                        <div class="text-xs text-gray-500">SKU: DT-ROV-022</div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-gray-600">Robotics Kits</td>
+                                <td class="px-6 py-4 font-semibold">$149.00</td>
+                                <td class="px-6 py-4">
+                                    <span class="text-red-500 font-bold">5</span>
+                                    <div class="w-24 bg-gray-100 h-1.5 rounded-full mt-1">
+                                        <div class="bg-red-500 h-1.5 rounded-full" style="width: 15%"></div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-right">
+                                    <button class="text-gray-400 hover:text-primary-600 p-2"><i
+                                            class="fas fa-edit"></i></button>
+                                    <button class="text-gray-400 hover:text-red-600 p-2"><i
+                                            class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Orders Section -->
+            <div>
+                <h3 class="text-lg font-bold text-gray-800 mb-4">Recent Orders</h3>
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                    <table class="w-full text-left">
+                        <thead class="bg-gray-50 text-gray-400 text-xs uppercase">
+                            <tr>
+                                <th class="px-6 py-4">Order ID</th>
+                                <th class="px-6 py-4">Customer</th>
+                                <th class="px-6 py-4">Amount</th>
+                                <th class="px-6 py-4">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100 text-sm">
+                            <tr>
+                                <td class="px-6 py-4 font-mono text-xs text-primary-600">#ORD-88219</td>
+                                <td class="px-6 py-4 font-medium text-gray-900">Blessings Phiri</td>
+                                <td class="px-6 py-4 font-semibold">$174.00</td>
+                                <td class="px-6 py-4">
+                                    <span
+                                        class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-bold uppercase">Processing</span>
+                                </td>
+                                
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-mono text-xs text-primary-600">#ORD-88220</td>
+                                <td class="px-6 py-4 font-medium text-gray-900">Alice Mafuleka</td>
+                                <td class="px-6 py-4 font-semibold">$25.00</td>
+                                <td class="px-6 py-4">
+                                    <span
+                                        class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs font-bold uppercase">Pending</span>
+                                </td>
+                               
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </main>
+
+
+    <!-- Product Modal -->
+    <div id="productModal" class="fixed inset-0 z-50 flex items-center justify-center hidden">
+        <div onclick="closeModal('productModal')" class="absolute inset-0 bg-black bg-opacity-50 modal-overlay"></div>
+        <div
+            class="relative bg-white w-full max-w-lg mx-4 rounded-2xl shadow-2xl modal-container transform scale-95 opacity-0">
+            <div class="p-6 border-b flex justify-between items-center">
+                <h3 class="text-xl font-bold text-gray-900">Add Store Product</h3>
+                <button onclick="closeModal('productModal')" class="text-gray-400 hover:text-gray-600"><i
+                        class="fas fa-times"></i></button>
+            </div>
+            <form class="p-6 space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="col-span-2">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Product Name</label>
+                        <input type="text"
+                            class="w-full px-4 py-2 border rounded-lg outline-none focus:ring-2 focus:ring-primary-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Price (USD)</label>
+                        <input type="number"
+                            class="w-full px-4 py-2 border rounded-lg outline-none focus:ring-2 focus:ring-primary-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Initial Stock</label>
+                        <input type="number"
+                            class="w-full px-4 py-2 border rounded-lg outline-none focus:ring-2 focus:ring-primary-500">
+                    </div>
+                    <div class="col-span-2">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Category</label>
+                        <select
+                            class="w-full px-4 py-2 border rounded-lg outline-none focus:ring-2 focus:ring-primary-500">
+                            <option>Microcontrollers</option>
+                            <option>Robotics Kits</option>
+                            <option>Sensors & Modules</option>
+                            <option>3D Printed Parts</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="pt-4">
+                    <button type="submit"
+                        class="w-full bg-primary-600 text-white py-3 rounded-lg font-bold hover:bg-primary-700 transition-all">
+                        Save Product
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Sidebar Toggle for Mobile
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+        }
+
+        mobileToggle.addEventListener('click', toggleSidebar);
+        overlay.addEventListener('click', toggleSidebar);
+
+        function openModal(id) {
+            const m = document.getElementById(id);
+            const b = m.querySelector('.modal-container');
+            m.classList.remove('hidden');
+            setTimeout(() => {
+                b.classList.remove('scale-95', 'opacity-0');
+                b.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeModal(id) {
+            const m = document.getElementById(id);
+            const b = m.querySelector('.modal-container');
+            b.classList.remove('scale-100', 'opacity-100');
+            b.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => m.classList.add('hidden'), 300);
+        }
+    </script>
+</body>
+
+</html>
